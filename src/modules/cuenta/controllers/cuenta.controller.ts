@@ -17,7 +17,7 @@ export class CuentaController {
 
   @Post()
   @ApiOperation({ summary: 'Crear una cuenta' })
-  @ApiResponse({ status: 200, description: 'Cuenta creada', type: [CuentaDTO] })
+  @ApiResponse({ status: 200, description: 'Cuenta creada', type: CuentaDTO })
   async createCuenta(
     @Body() createCuentaDto: CreateCuentaDto,    
   ): Promise<ResponseMessage> {
@@ -44,6 +44,8 @@ export class CuentaController {
 
   @ApiParam({ name: 'id', type: 'string' })
   @Get(':id')
+  @ApiOperation({ summary: 'Obtener una cuenta por su id' })
+  @ApiResponse({ status: 200, description: 'Cuenta encontrada', type: CuentaDTO })
   public async findOne(@Param('id', ParseUUIDPipe) id: string): Promise<ResponseMessage> {
     return {
       statusCode: 200,
@@ -53,6 +55,8 @@ export class CuentaController {
 
   @ApiParam({ name: 'id', type: 'string' })
   @Post('cambiar-estado/:id')
+  @ApiOperation({ summary: 'Activar o desactivar una cuenta por su id' })
+  @ApiResponse({ status: 200, description: 'Cambio realizado', type: "{'mensaje': 'cuenta desactivada | cuenta activada'}" })
   public async cambiarEstado(
     @Param('id', ParseUUIDPipe) id: string,
   ): Promise<ResponseMessage> {
@@ -65,6 +69,8 @@ export class CuentaController {
   // @RolesAccess('ADMIN')
   @ApiParam({ name: 'id', type: 'string' })
   @Delete(':id')
+  @ApiOperation({ summary: 'Eliminar una cuenta por id' })
+  @ApiResponse({ status: 200, description: 'Cuenta eliminada' })
   public async delete(@Param('id', ParseUUIDPipe) id: string): Promise<ResponseMessage> {
     return await this.cuentaService.delete(id);
   }

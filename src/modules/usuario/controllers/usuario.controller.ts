@@ -25,7 +25,6 @@ export class UsuarioController {
     @Get(':id')
     @ApiOperation({ summary: 'Obtener un usuario por ID' })
     @ApiResponse({ status: 200, description: 'Usuario encontrado', type: UsuarioDto })
-    @ApiResponse({ status: 404, description: 'Usuario no encontrado' })
     async findOne(@Param('id') id: string): Promise<UsuarioDto> {
         return this.usuarioService.findOne(id);
     }
@@ -33,7 +32,6 @@ export class UsuarioController {
     @Patch(':id')
     @ApiOperation({ summary: 'Actualizar un usuario' })
     @ApiResponse({ status: 200, description: 'Usuario actualizado', type: UsuarioDto })
-    @ApiResponse({ status: 404, description: 'Usuario no encontrado' })
     async update(
         @Param('id') id: string,
         @Body() updateUsuarioDto: UpdateUsuarioDto,
