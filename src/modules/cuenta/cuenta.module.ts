@@ -7,7 +7,7 @@ import { CuentaEntity } from './entities/cuenta.entity';
 
 @Module({
   imports: [
-    TypeOrmModule.forFeature([CuentaEntity])
+    TypeOrmModule.forFeature([CuentaEntity]),
   ],
   providers: [CuentaService],
   controllers: [CuentaController],

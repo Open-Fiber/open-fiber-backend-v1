@@ -8,7 +8,7 @@ import { ResponseMessage } from '../../common/interfaces/responseMessage.interfa
 // import { UserService } from '../../user/services/user.service';
 
 @ApiTags('Auth')
-@Controller()
+@Controller('auth')
 export class AuthController {
 
   constructor(

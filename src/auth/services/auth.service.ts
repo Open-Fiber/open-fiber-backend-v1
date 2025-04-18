@@ -14,7 +14,7 @@ import { CuentaResponseDTO } from '../../modules/cuenta/dto/cuentaResponse.dto';
 
 @Injectable()
 export class AuthService {
-  private readonly logger = new Logger(AuthService.name);
+  private readonly logger = new Logger('AuthService');
 
   constructor(
     private readonly cuentaService: CuentaService,
