@@ -1,5 +1,5 @@
 import { Body, Controller, Get, Post, Query } from '@nestjs/common';
-import { ApiQuery, ApiTags } from '@nestjs/swagger/dist/decorators';
+import { ApiOperation, ApiQuery, ApiResponse, ApiTags } from '@nestjs/swagger/dist/decorators';
 
 import { AuthDTO } from '../dto/auth.dto';
 import { AuthService } from '../services/auth.service';
@@ -12,7 +12,7 @@ import { ResponseMessage } from '../../common/interfaces/responseMessage.interfa
 export class AuthController {
 
   constructor(
-    private readonly authService: AuthService, 
+    private readonly authService: AuthService,
     // private readonly userService: UserService
   ) { }
 
@@ -26,6 +26,8 @@ export class AuthController {
   // }
 
   @Post('login')
+  @ApiOperation({ summary: 'Obtener token de acceso para la cuenta' })
+  @ApiResponse({ status: 200, description: 'Cambio realizado', example: `{ accessToken: 'token', dataCuenta: 'any'}` })
   public async login(@Body() authDto: AuthDTO): Promise<ResponseMessage> {
     const { email, password } = authDto;
     return {
@@ -36,6 +38,8 @@ export class AuthController {
 
   @ApiQuery({ name: 'token', type: 'string', required: true })
   @Post('checkToken')
+  @ApiOperation({ summary: 'Revisar el token' })
+  @ApiResponse({ status: 200, description: 'Cambio realizado', example: `{ rol: 'rol', sub: 'any', tipo: 'tipoCuenta', time: 'tiempo útil en segundos', isExpired: 'false'}` })
   public async checkToken(@Query('token') token: string): Promise<ResponseMessage> {
     return {
       statusCode: 200,

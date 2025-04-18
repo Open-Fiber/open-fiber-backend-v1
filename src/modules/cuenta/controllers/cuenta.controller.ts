@@ -56,7 +56,7 @@ export class CuentaController {
   @ApiParam({ name: 'id', type: 'string' })
   @Post('cambiar-estado/:id')
   @ApiOperation({ summary: 'Activar o desactivar una cuenta por su id' })
-  @ApiResponse({ status: 200, description: 'Cambio realizado', type: "{'mensaje': 'cuenta desactivada | cuenta activada'}" })
+  @ApiResponse({ status: 200, description: 'Cambio realizado', example: "{'mensaje': 'cuenta desactivada | cuenta activada'}" })
   public async cambiarEstado(
     @Param('id', ParseUUIDPipe) id: string,
   ): Promise<ResponseMessage> {
