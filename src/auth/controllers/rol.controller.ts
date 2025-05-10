@@ -11,7 +11,7 @@ import { PERMISOS } from '../constants/permisos.constant';
 
 @ApiTags('Rol')
 @ApiBearerAuth()
-// @UseGuards(AuthGuard, PermisoGuard)
+@UseGuards(AuthGuard, PermisoGuard)
 @Controller('rol')
 export class RolController {
 
@@ -26,7 +26,7 @@ export class RolController {
     }
   }
 
-  @PermisoAccess(PERMISOS.ROL_READ_All)
+  // @PermisoAccess(PERMISOS.ROL_READ_All)
   @ApiQuery({ name: 'limit', type: 'number', required: false })
   @ApiQuery({ name: 'offset', type: 'number', required: false })
   @ApiQuery({ name: 'order', enum: ORDER_ENUM, required: false })

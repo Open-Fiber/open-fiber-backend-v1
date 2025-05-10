@@ -17,7 +17,7 @@ export class PermisoController {
 
     constructor(private readonly permisoService: PermisoService) { }
 
-    @PermisoAccess(PERMISOS.PERMISO_CREATE)
+    // @PermisoAccess(PERMISOS.PERMISO_CREATE)
     @Post()
     async create(@Body() createPermisoDto: CreatePermisoDTO): Promise<any> {
         return {
@@ -38,7 +38,7 @@ export class PermisoController {
             statusCode: 200, countData, data
         }
     }
-    @PermisoAccess(PERMISOS.PERMISO_READ)
+    // @PermisoAccess(PERMISOS.PERMISO_READ)
     @ApiParam({ name: 'id', type: 'string' })
     @Get(':id')
     async findOne(@Param('id', ParseUUIDPipe) id: string): Promise<any> {
@@ -48,7 +48,7 @@ export class PermisoController {
         }
     }
 
-    @PermisoAccess(PERMISOS.PERMISO_READ_All)
+    // @PermisoAccess(PERMISOS.PERMISO_READ_All)
     @ApiParam({ name: 'id', type: 'string' })
     @Patch(':id')
     async update(@Param('id', ParseUUIDPipe) id: string, @Body() updatePermisoDto: UpdatePermisoDTO): Promise<any> {
@@ -58,7 +58,7 @@ export class PermisoController {
         }
     }
 
-    @PermisoAccess(PERMISOS.PERMISO_DELETE)
+    // @PermisoAccess(PERMISOS.PERMISO_DELETE)
     @ApiParam({ name: 'id', type: 'string' })
     @Delete(':id')
     remove(@Param('id', ParseUUIDPipe) id: string): Promise<any> {

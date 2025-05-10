@@ -60,14 +60,13 @@ export class PermisoService {
         }
     }
 
-    public async update(id: string, updatePermissionDto: UpdatePermisoDTO): Promise<PermisoEntity> {
+    public async update(id: string, updatePermisoDto: UpdatePermisoDTO): Promise<PermisoEntity> {
         try {
-            const role = await this.permisoRepository.findOne({ where: { id } });
-            if (!role) throw new NotFoundException('Permission not found');
-            const { nombre, descripcion } = updatePermissionDto;
-            const roleUpdated = await this.permisoRepository.update(role, { nombre, descripcion });
-            if (!roleUpdated) throw new Error('Error updating permission');
-            return role;
+            const permiso = await this.findOne(id);
+            if (!permiso) throw new NotFoundException('Permission not found');
+            const permisoUpdated = await this.permisoRepository.update(id, updatePermisoDto);
+            if (permisoUpdated.affected == 0) throw new Error('Error updating permission');
+            return await this.findOne(id);
         } catch (error) {
             handlerError(error, this.logger);
         }
