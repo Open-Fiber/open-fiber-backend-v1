@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { ITokenStrategy } from '../token-strategy';
+import { ITokenStrategy } from '../token-strategy.service';
 import { authToken } from '../../../common/utils/auth.token';
 import { IAuthToken } from '../../interfaces/authToken.interface';
 
