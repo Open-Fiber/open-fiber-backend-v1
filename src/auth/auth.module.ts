@@ -5,14 +5,28 @@ import { AuthController } from './controllers/auth.controller';
 import { CuentaService } from '../modules/cuenta/services/cuenta.service';
 import { CuentaModule } from '../modules/cuenta/cuenta.module';
 import { ConfigModule } from '@nestjs/config';
-import { JwtStrategy } from './services/implementacion/jwt.strategy';
+import { JwtStrategy } from './services/implementacion/jwt.strategy.service';
 import { TokenValidatorService } from './services/token-validator.service';
-import { ITokenStrategy } from './services/token-strategy';
+import { ITokenStrategy } from './services/token-strategy.service';
 import { JwtServiceAdapter } from './services/jwt.service';
+import { PermisoController } from './controllers/permiso.controller';
+import { RolController } from './controllers/rol.controller';
+import { RolService } from './services/rol.service';
+import { PermisoService } from './services/permiso.service';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { PermisoEntity } from './entities/permiso.entity';
+import { RolEntity } from './entities/rol.entity';
+import { UniquePermissionConstraint, UniqueRoleConstraint } from './validations';
+import { PermisoRolEntity } from './entities/permiso-rol.entity';
+import { PermisoRolService } from './services/permission-role.service';
 
 @Global()
 @Module({
-  imports: [CuentaModule, ConfigModule],
+  imports: [
+    TypeOrmModule.forFeature([PermisoEntity, RolEntity, PermisoRolEntity]),
+    CuentaModule, 
+    ConfigModule
+  ],
   providers: [
     {
       provide: 'ITokenStrategy',
@@ -24,9 +38,15 @@ import { JwtServiceAdapter } from './services/jwt.service';
       inject: ['ITokenStrategy'],
     },
     AuthService,
+    RolService,
+    PermisoRolService,
+    PermisoService,
     CuentaService,
+    UniqueRoleConstraint,
+    UniquePermissionConstraint,
     JwtServiceAdapter,
   ],
-  controllers: [AuthController],
+  exports: [RolService, PermisoService],
+  controllers: [AuthController, PermisoController, RolController],
 })
 export class AuthModule { }

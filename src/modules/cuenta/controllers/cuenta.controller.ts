@@ -8,10 +8,10 @@ import { CuentaService } from '../services/cuenta.service';
 import { QueryDto } from '../../../common/dto/query.dto';
 import { ResponseMessage } from '../../../common/interfaces/responseMessage.interface';
 
-@ApiTags('Cuentas')
+@ApiTags('Cuenta')
 // @ApiBearerAuth()
 // @UseGuards(AuthGuard, RolesGuard)
-@Controller('cuentas')
+@Controller('cuenta')
 export class CuentaController {
   constructor(private readonly cuentaService: CuentaService) { }
 
