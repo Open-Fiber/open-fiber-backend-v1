@@ -5,6 +5,7 @@ import { CORS_OPTIONS } from './common/constants';
 import { ClassSerializerInterceptor, ValidationPipe } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
+import { useContainer } from 'class-validator';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
@@ -21,6 +22,8 @@ async function bootstrap() {
       }
     })
   )
+
+  useContainer(app.select(AppModule), { fallbackOnErrors: true });
 
   const reflector = app.get('Reflector');
   app.useGlobalInterceptors(new ClassSerializerInterceptor(reflector));

@@ -5,6 +5,7 @@ import { DataSourceConfig } from './config/data.source';
 import { AuthModule } from './auth/auth.module';
 import { CommonModule } from './common/common.module';
 import { UsuarioModule } from './modules/usuario/usuario.module';
+import { OrganizacionModule } from './modules/organizacion/organization.module';
 
 @Module({
   imports: [
@@ -12,6 +13,7 @@ import { UsuarioModule } from './modules/usuario/usuario.module';
     TypeOrmModule.forRoot({ ...DataSourceConfig }),
     AuthModule,
     CommonModule,
+    OrganizacionModule,
     UsuarioModule,
   ],
 })
