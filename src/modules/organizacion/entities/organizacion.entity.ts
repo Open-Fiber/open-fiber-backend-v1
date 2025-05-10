@@ -20,8 +20,8 @@ export class OrganizacionEntity extends BaseEntity {
     @Column({ name: 'telefono', type: 'varchar', length: 20, nullable: true })
     telefono: string;
 
-    @Column({ name: 'pagina_url', type: 'date', nullable: true })
-    pagina_url?: Date;
+    @Column({ name: 'pagina_url', type: 'varchar', nullable: true })
+    pagina_url?: string;
 
     @Column({ name: 'foto_url', type: 'varchar', nullable: true })
     logo_url?: string;
