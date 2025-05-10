@@ -11,6 +11,7 @@ import { TokenValidatorService } from './token-validator.service';
 import { JwtServiceAdapter } from './jwt.service';
 import { IAuthToken } from './../interfaces/authToken.interface';
 import { CuentaResponseDTO } from '../../modules/cuenta/dto/cuentaResponse.dto';
+import { TIPO_CUENTA } from '../../common/constants/tipoCuenta';
 
 @Injectable()
 export class AuthService {
@@ -24,6 +25,7 @@ export class AuthService {
 
   async login(email: string, password: string): Promise<ILoginResponse> {
     try {
+      console.log(email)
       const cuenta = await this.cuentaService.findByEmail(email);
       if (!cuenta) throw new NotFoundException('Usuario o contraseña incorrecta.');
       if (cuenta.isDeleted || !cuenta.isActive) throw new NotFoundException('Ocurrió un problema.');
@@ -62,6 +64,9 @@ export class AuthService {
   }
 
   private getPayload(cuenta: CuentaEntity): IPayload {
+    if( cuenta.tipo === TIPO_CUENTA.USER){
+      
+    }
     return { sub: cuenta.id, tipo: cuenta.tipo };
   }
 }
