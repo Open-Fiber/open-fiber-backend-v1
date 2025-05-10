@@ -14,6 +14,7 @@ export const authToken = (token: string): IAuthToken | string => {
 
     return {
       rol: decode.rol,
+      permisos: decode.permisos,
       tipo: decode.tipo,
       sub: decode.sub,
       time: timeRemaining,
