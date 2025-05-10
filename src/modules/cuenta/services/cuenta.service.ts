@@ -57,7 +57,9 @@ export class CuentaService {
 
   public async findByEmail(email: string): Promise<CuentaEntity> {
     try {
-      const user: CuentaEntity = await this.cuentaRepository.findOne({ where: { email } });
+      console.log(email)
+      const user: CuentaEntity = await this.cuentaRepository.findOne({ where: { email:email } });
+      console.log(user)
       if (!user) throw new NotFoundException('Cuenta no encontrada.');
       return user;
     } catch (error) {
