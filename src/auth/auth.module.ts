@@ -19,12 +19,14 @@ import { RolEntity } from './entities/rol.entity';
 import { UniquePermissionConstraint, UniqueRoleConstraint } from './validations';
 import { PermisoRolEntity } from './entities/permiso-rol.entity';
 import { PermisoRolService } from './services/permission-role.service';
+import { UsuarioModule } from 'src/modules/usuario/usuario.module';
 
 @Global()
 @Module({
   imports: [
     TypeOrmModule.forFeature([PermisoEntity, RolEntity, PermisoRolEntity]),
     CuentaModule, 
+    UsuarioModule,
     ConfigModule
   ],
   providers: [
