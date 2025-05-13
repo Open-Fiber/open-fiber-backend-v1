@@ -96,6 +96,14 @@ export class UsuarioDto {
     @IsString()
     cuentaId: string;
 
+    @ApiProperty({
+        example: 'admin',
+        type: String,
+        description: 'Rol del usuario'
+    })
+    @IsString()
+    rol: string;
+
     public constructor(usuario: UsuarioEntity) {
         this.id = usuario.id;
         this.nombre = usuario.nombre;
@@ -105,6 +113,7 @@ export class UsuarioDto {
         this.fotoUrl = usuario.fotoUrl;
         this.pais = usuario.pais;
         this.sexo = usuario.sexo;
-        this.cuentaId = usuario.cuenta ? usuario.cuenta.id : null; 
+        this.cuentaId = usuario.cuenta ? usuario.cuenta.id : null;
+        this.rol = usuario.rol ? usuario.rol.nombre : null; 
     }
 }
