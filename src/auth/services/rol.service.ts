@@ -102,9 +102,7 @@ export class RolService {
 
   public async findOneByName(nombre: string): Promise<RolEntity> {
     try {
-      console.log('Buscando rol')
       const rol = await this.roleRepository.findOne({ where: { nombre } });
-      console.log('Rol encontrado',rol);
       return rol;
     } catch (error) {
       handlerError(error, this.logger);

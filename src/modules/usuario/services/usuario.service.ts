@@ -4,7 +4,6 @@ import { Repository } from 'typeorm';
 import { UsuarioEntity } from '../entities/usuario.entity';
 import { CreateUsuarioDto, UpdateUsuarioDto, UsuarioDto } from '../dto/';
 import { CuentaService } from 'src/modules/cuenta/services/cuenta.service';
-import { plainToInstance } from 'class-transformer';
 import { handlerError } from 'src/common/utils/handlerError.utils';
 
 @Injectable()
@@ -38,7 +37,7 @@ export class UsuarioService {
   async findAll(): Promise<UsuarioDto[]> {
     try {
       const usuarios = await this.usuarioRepository.find({
-        relations: ['cuenta']
+        relations: ['cuenta', 'rol']
       });
       console.log(usuarios)
       return usuarios.map(usuario => new UsuarioDto(usuario));
@@ -52,7 +51,23 @@ export class UsuarioService {
     try {
       const usuario = await this.usuarioRepository.findOne({
         where: { id },
-        relations: ['cuenta']
+        relations: ['cuenta', 'rol']
+      });
+
+      if (!usuario) {
+        throw new NotFoundException(`Usuario con ID ${id} no encontrado`);
+      }
+
+      return new UsuarioDto(usuario);
+    } catch (error) {
+      handlerError(error, this.logger);
+    }
+  }
+
+  async findUsuarioByCuenta(id: string): Promise<UsuarioDto> {
+    try {
+      const usuario = await this.usuarioRepository.findOne({
+        where: { cuenta: { id } }, relations: ['rol']
       });
 
       if (!usuario) {
@@ -69,6 +84,17 @@ export class UsuarioService {
     try {
       const usuario = await this.findOne(id);
       const usuarioUpdated = await this.usuarioRepository.update(usuario.id, updateUsuarioDto);
+      if (usuarioUpdated.affected === 0) throw new NotFoundException('Usuario no actualizado.');
+      return await this.findOne(id);
+    } catch (error) {
+      handlerError(error, this.logger);
+    }
+  }
+
+  async updateRol(id: string, rolId: string ): Promise<UsuarioDto> {
+    try {
+      const usuario = await this.findOne(id);
+      const usuarioUpdated = await this.usuarioRepository.update(usuario.id, { rol: { id: rolId}});
       if (usuarioUpdated.affected === 0) throw new NotFoundException('Usuario no actualizado.');
       return await this.findOne(id);
     } catch (error) {
