@@ -2,6 +2,7 @@ import { Body, Controller, Delete, Get, Param, Patch, Post, Put } from '@nestjs/
 import { UsuarioService } from '../services/usuario.service';
 import { CreateUsuarioDto, UpdateUsuarioDto, UsuarioDto } from '../dto';
 import { ApiTags, ApiResponse, ApiOperation } from '@nestjs/swagger';
+import { UpdateRolUsuarioDto } from '../dto/updateRolUsuario.dto';
 
 @ApiTags('Usuarios')
 @Controller('usuarios')
@@ -37,6 +38,16 @@ export class UsuarioController {
         @Body() updateUsuarioDto: UpdateUsuarioDto,
     ): Promise<UsuarioDto> {
         return this.usuarioService.update(id, updateUsuarioDto);
+    }
+
+    @Patch('/rol/:id')
+    @ApiOperation({ summary: 'Actualizar el rol de un usuario' })
+    @ApiResponse({ status: 200, description: 'Usuario actualizado', type: UsuarioDto })
+    async updateRol(
+        @Param('id') id: string,
+        @Body() updateRolUsuarioDto: UpdateRolUsuarioDto,
+    ): Promise<UsuarioDto> {
+        return this.usuarioService.updateRol(id, updateRolUsuarioDto.rolId);
     }
 
 }

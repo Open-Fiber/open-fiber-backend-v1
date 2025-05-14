@@ -17,7 +17,7 @@ export class RolController {
 
   constructor(private readonly rolService: RolService) { }
 
-  // @PermisoAccess(PERMISOS.ROL_CREATE)
+  @PermisoAccess(PERMISOS.ROL_CREATE)
   @Post()
   async create(@Body() createRolDto: CreateRolDTO): Promise<any> {
     return {
