@@ -14,6 +14,7 @@ import { CreateProyectoDto } from './../dto/create-proyecto.dto';
 import { UpdateProyectoDto } from './../dto/update-proyecto.dto';
 import { GetCuenta } from './../../../auth/decorators';
 import { AuthGuard, PermisoGuard } from './../../../auth/guards';
+import { ResponseProyectoDTO } from '../dto/response-proyecto.dto';
 
 @ApiBearerAuth()
 @ApiTags('Proyectos')
@@ -23,28 +24,31 @@ export class ProyectoController {
   constructor(private readonly proyectoService: ProyectoService) {}
 
   @Post()
-  create(@Body() dto: CreateProyectoDto, @GetCuenta() idCuenta: string) {
-    return this.proyectoService.create(dto, idCuenta);
+  async create(@Body() dto: CreateProyectoDto, @GetCuenta() idCuenta: string) {
+    const proyectoCreated = await this.proyectoService.create(dto, idCuenta);
+    return new ResponseProyectoDTO(proyectoCreated);
   }
 
   @Get()
-  findAll() {
-    return this.proyectoService.findAll();
+  async findAll() {
+    const proyectos = await this.proyectoService.findAll();
+    return proyectos.map(proyecto => new ResponseProyectoDTO(proyecto))
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.proyectoService.findOne(id);
+  async findOne(@Param('id') id: string) {
+    return new ResponseProyectoDTO(await this.proyectoService.findOne(id));
   }
 
   @Get('cuenta/:id')
-  findByCuenta(@Param('id') cuentaId: string) {
-    return this.proyectoService.findByCuenta(cuentaId);
+  async findByCuenta(@Param('id') cuentaId: string) {
+    const proyectos = await this.proyectoService.findByCuenta(cuentaId);
+    return proyectos.map( proyecto => new ResponseProyectoDTO(proyecto))
   }
 
   @Put(':id')
-  update(@Param('id') id: string, @Body() dto: UpdateProyectoDto) {
-    return this.proyectoService.update(id, dto);
+  async update(@Param('id') id: string, @Body() dto: UpdateProyectoDto) {
+    return new ResponseProyectoDTO(await this.proyectoService.update(id, dto));
   }
 
   @Delete(':id')

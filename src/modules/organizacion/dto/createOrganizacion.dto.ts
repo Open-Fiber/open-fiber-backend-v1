@@ -1,5 +1,5 @@
 import { IsNotEmpty, IsOptional, IsString, MaxLength } from "class-validator";
-import { CreateCuentaDto } from "../../../modules/cuenta/dto/createCuenta.dto";
+import { CreateCuentaDto } from "../../cuenta/dto/create-cuenta.dto";
 import { ApiProperty } from "@nestjs/swagger";
 
 export class CreateOrganizacionDto {

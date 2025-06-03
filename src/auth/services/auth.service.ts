@@ -10,7 +10,7 @@ import { handlerError } from './../../common/utils/handlerError.utils';
 import { TokenValidatorService } from './token-validator.service';
 import { JwtServiceAdapter } from './jwt.service';
 import { IAuthToken } from './../interfaces/authToken.interface';
-import { CuentaResponseDTO } from '../../modules/cuenta/dto/cuentaResponse.dto';
+import { CuentaResponseDTO } from '../../modules/cuenta/dto/cuenta-response.dto';
 import { TIPO_CUENTA } from '../../common/constants/tipoCuenta';
 import { UsuarioService } from '../../modules/usuario/services/usuario.service';
 

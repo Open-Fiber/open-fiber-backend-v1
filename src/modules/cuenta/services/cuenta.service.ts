@@ -8,7 +8,7 @@ import { CuentaEntity } from '../entities/cuenta.entity';
 import { handlerError } from '../../../common/utils/handlerError.utils';
 import { QueryDto } from '../../../common/dto/query.dto';
 import { ResponseMessage } from '../../../common/interfaces/responseMessage.interface';
-import { CuentaResponseDTO } from '../dto/cuentaResponse.dto';
+import { CuentaResponseDTO } from '../dto/cuenta-response.dto';
 
 @Injectable()
 export class CuentaService {
