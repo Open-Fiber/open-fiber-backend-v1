@@ -18,15 +18,14 @@ export class ProyectoService {
     private readonly cuentaRepository: Repository<CuentaEntity>,
   ) {}
 
-  async create(dto: CreateProyectoDto): Promise<ProyectoEntity> {
-    const cuenta = await this.cuentaRepository.findOneBy({ id: dto.cuentaId });
+  async create(dto: CreateProyectoDto, idCuenta: string): Promise<ProyectoEntity> {
+    const cuenta = await this.cuentaRepository.findOneBy({ id: idCuenta });
     if (!cuenta) {
       throw new NotFoundException('Cuenta no encontrada');
     }
 
     const proyecto = this.proyectoRepository.create({
-      ...dto,
-      cuenta,
+      ...dto, cuenta: cuenta
     });
 
     return this.proyectoRepository.save(proyecto);

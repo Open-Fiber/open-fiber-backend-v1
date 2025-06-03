@@ -54,7 +54,8 @@ export class AuthService {
     const payload = await this.getPayload(cuenta);
     const accessToken = this.jwtService.signToken(payload);
     const cuentaData = new CuentaResponseDTO(cuenta);
-    return { accessToken, dataCuenta: cuentaData };
+    const { tipo, id } = cuentaData;    
+    return { accessToken, data: { id: id, tipo:tipo } };
   }
 
   async recoverPassword(email: string): Promise<{ accessToken: string }> {

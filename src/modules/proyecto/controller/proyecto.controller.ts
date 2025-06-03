@@ -6,22 +6,25 @@ import {
   Param,
   Put,
   Delete,
+  UseGuards,
 } from '@nestjs/common';
+import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
 import { ProyectoService } from './../services/proyecto.service';
 import { CreateProyectoDto } from './../dto/create-proyecto.dto';
 import { UpdateProyectoDto } from './../dto/update-proyecto.dto';
-import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
-import { GetUser } from 'src/auth/decorators';
+import { GetCuenta } from './../../../auth/decorators';
+import { AuthGuard, PermisoGuard } from './../../../auth/guards';
 
 @ApiBearerAuth()
 @ApiTags('Proyectos')
+@UseGuards(AuthGuard, PermisoGuard)
 @Controller('proyectos')
 export class ProyectoController {
   constructor(private readonly proyectoService: ProyectoService) {}
 
   @Post()
-  create(@Body() dto: CreateProyectoDto, @GetUser() idCuenta: string) {
-    return this.proyectoService.create(dto);
+  create(@Body() dto: CreateProyectoDto, @GetCuenta() idCuenta: string) {
+    return this.proyectoService.create(dto, idCuenta);
   }
 
   @Get()
