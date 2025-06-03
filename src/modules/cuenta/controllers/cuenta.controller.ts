@@ -22,7 +22,6 @@ export class CuentaController {
     @Body() createCuentaDto: CreateCuentaDto,    
   ): Promise<ResponseMessage> {
     return {
-      statusCode: 200,
       data: await this.cuentaService.createCuenta(createCuentaDto),
     }
   }
@@ -37,7 +36,6 @@ export class CuentaController {
   @ApiResponse({ status: 200, description: 'Lista de cuentas', type: [CuentaDTO] })
   public async findAll(@Query() queryDto: QueryDto): Promise<ResponseMessage> {
     return {
-      statusCode: 200,
       data: await this.cuentaService.findAll(queryDto),
     };
   }
@@ -48,7 +46,6 @@ export class CuentaController {
   @ApiResponse({ status: 200, description: 'Cuenta encontrada', type: CuentaDTO })
   public async findOne(@Param('id', ParseUUIDPipe) id: string): Promise<ResponseMessage> {
     return {
-      statusCode: 200,
       data: await this.cuentaService.findOne(id),
     }
   }
@@ -61,7 +58,6 @@ export class CuentaController {
     @Param('id', ParseUUIDPipe) id: string,
   ): Promise<ResponseMessage> {
     return {
-      statusCode: 200,
       data: await this.cuentaService.cambiarEstadoCuenta(id),
     };
   }

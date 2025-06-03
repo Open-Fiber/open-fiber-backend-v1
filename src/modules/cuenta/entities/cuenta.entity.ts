@@ -1,7 +1,8 @@
-import { Column, Entity } from "typeorm";
+import { Column, Entity, ManyToOne, OneToMany } from "typeorm";
 import { Exclude } from "class-transformer";
-import { BaseEntity } from "../../../common/entities/base.entity";
-import { TIPO_CUENTA } from "../../../common/constants/tipoCuenta";
+import { BaseEntity } from "./../../../common/entities/base.entity";
+import { TIPO_CUENTA } from "./../../../common/constants/tipoCuenta";
+import { ProyectoEntity } from "./../../../modules/proyecto/entities/proyecto.entity";
 
 @Entity({ name: 'cuenta' })
 export class CuentaEntity extends BaseEntity {
@@ -21,4 +22,7 @@ export class CuentaEntity extends BaseEntity {
 
     @Column({ name: 'is_deleted', type: 'boolean', default: false })
     isDeleted: boolean;
+
+    @OneToMany(() => ProyectoEntity, proyecto => proyecto.cuenta)
+    proyectos: ProyectoEntity;
 }
