@@ -21,7 +21,6 @@ export class RolController {
   @Post()
   async create(@Body() createRolDto: CreateRolDTO): Promise<any> {
     return {
-      statusCode: 201,
       data: await this.rolService.create(createRolDto)
     }
   }
@@ -36,7 +35,7 @@ export class RolController {
   async findAll(@Query() queryDto: QueryDto): Promise<any> {
     const { data, countData } = await this.rolService.findAll(queryDto);
     return {
-      statusCode: 200, countData, data
+      countData, data
     }
   }
 
@@ -45,7 +44,6 @@ export class RolController {
   @Get(':id')
   async findOne(@Param('id', ParseUUIDPipe) id: string): Promise<any> {
     return {
-      statusCode: 200,
       data: await this.rolService.findOne(id)
     }
   }
@@ -55,7 +53,6 @@ export class RolController {
   @Patch(':id')
   async update(@Param('id', ParseUUIDPipe) id: string, @Body() updateRoleDto: UpdateRolDTO): Promise<any> {
     return {
-      statusCode: 200,
       data: await this.rolService.update(id, updateRoleDto)
     }
   }

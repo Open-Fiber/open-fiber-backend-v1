@@ -1,8 +1,8 @@
 import { Body, Controller, Get, Post, Query } from '@nestjs/common';
 import { ApiOperation, ApiQuery, ApiResponse, ApiTags } from '@nestjs/swagger/dist/decorators';
 
-import { AuthDTO } from '../dto/auth.dto';
-import { AuthService } from '../services/auth.service';
+import { AuthDTO } from './../dto/auth.dto';
+import { AuthService } from './../services/auth.service';
 // import { CreateCuentaDto } from '../../cuenta/dto';
 import { ResponseMessage } from '../../common/interfaces/responseMessage.interface';
 // import { UserService } from '../../user/services/user.service';
@@ -20,18 +20,16 @@ export class AuthController {
   // public async register(@Body() createUserDto: CreateUserDto): Promise<ResponseMessage> {
   //   console.log(createUserDto);
   //   return {
-  //     statusCode: 200,
   //     data: await this.userService.createUser(createUserDto),
   //   };
   // }
 
   @Post('login')
   @ApiOperation({ summary: 'Obtener token de acceso para la cuenta' })
-  @ApiResponse({ status: 200, description: 'Cambio realizado', example: `{ accessToken: 'token', dataCuenta: 'any'}` })
+  @ApiResponse({ description: 'Cambio realizado', example: `{ accessToken: 'token', dataCuenta: 'any'}` })
   public async login(@Body() authDto: AuthDTO): Promise<ResponseMessage> {
     const { email, password } = authDto;
     return {
-      statusCode: 200,
       data: await this.authService.login(email, password),
     };
   }
@@ -39,10 +37,9 @@ export class AuthController {
   @ApiQuery({ name: 'token', type: 'string', required: true })
   @Post('checkToken')
   @ApiOperation({ summary: 'Revisar el token' })
-  @ApiResponse({ status: 200, description: 'Cambio realizado', example: `{ rol: 'rol', sub: 'any', tipo: 'tipoCuenta', time: 'tiempo útil en segundos', isExpired: 'false'}` })
+  @ApiResponse({ description: 'Cambio realizado', example: `{ rol: 'rol', sub: 'any', tipo: 'tipoCuenta', time: 'tiempo útil en segundos', isExpired: 'false'}` })
   public async checkToken(@Query('token') token: string): Promise<ResponseMessage> {
     return {
-      statusCode: 200,
       data: await this.authService.checkToken(token)
     };
   }

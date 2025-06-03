@@ -21,7 +21,6 @@ export class PermisoController {
     @Post()
     async create(@Body() createPermisoDto: CreatePermisoDTO): Promise<any> {
         return {
-            statusCode: 201,
             data: await this.permisoService.create(createPermisoDto)
         }
     }
@@ -35,7 +34,7 @@ export class PermisoController {
     async findAll(@Query() queryDto: QueryDto): Promise<any> {
         const { data, countData } = await this.permisoService.findAll(queryDto);
         return {
-            statusCode: 200, countData, data
+            countData, data
         }
     }
     // @PermisoAccess(PERMISOS.PERMISO_READ)
@@ -43,7 +42,6 @@ export class PermisoController {
     @Get(':id')
     async findOne(@Param('id', ParseUUIDPipe) id: string): Promise<any> {
         return {
-            statusCode: 200,
             data: await this.permisoService.findOne(id)
         }
     }
@@ -53,7 +51,6 @@ export class PermisoController {
     @Patch(':id')
     async update(@Param('id', ParseUUIDPipe) id: string, @Body() updatePermisoDto: UpdatePermisoDTO): Promise<any> {
         return {
-            statusCode: 200,
             data: await this.permisoService.update(id, updatePermisoDto)
         }
     }
