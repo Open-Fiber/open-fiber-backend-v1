@@ -48,7 +48,7 @@ import { UsuarioModule } from 'src/modules/usuario/usuario.module';
     UniquePermissionConstraint,
     JwtServiceAdapter,
   ],
-  exports: [RolService, PermisoService],
+  exports: [RolService, PermisoService, PermisoRolService],
   controllers: [AuthController, PermisoController, RolController],
 })
 export class AuthModule { }

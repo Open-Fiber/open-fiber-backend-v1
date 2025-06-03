@@ -6,6 +6,7 @@ import { AuthModule } from './auth/auth.module';
 import { CommonModule } from './common/common.module';
 import { UsuarioModule } from './modules/usuario/usuario.module';
 import { OrganizacionModule } from './modules/organizacion/organization.module';
+import { ProyectoModule } from './modules/proyecto/proyecto.module';
 
 @Module({
   imports: [
@@ -15,6 +16,7 @@ import { OrganizacionModule } from './modules/organizacion/organization.module';
     CommonModule,
     OrganizacionModule,
     UsuarioModule,
+    ProyectoModule,
   ],
 })
 export class AppModule {}
