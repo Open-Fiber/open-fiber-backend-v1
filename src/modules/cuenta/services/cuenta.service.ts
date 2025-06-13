@@ -1,5 +1,5 @@
 import { Repository } from 'typeorm';
-import { BadRequestException, Injectable, Logger, NotFoundException, UnauthorizedException, } from '@nestjs/common';
+import { BadRequestException, forwardRef, Inject, Injectable, Logger, NotFoundException, UnauthorizedException, } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import * as bcrypt from 'bcrypt';
 
@@ -9,6 +9,8 @@ import { handlerError } from '../../../common/utils/handlerError.utils';
 import { QueryDto } from '../../../common/dto/query.dto';
 import { ResponseMessage } from '../../../common/interfaces/responseMessage.interface';
 import { CuentaResponseDTO } from '../dto/cuenta-response.dto';
+import { RegistrarUsuarioDto } from '../../../common/dto/RegistrarUsuario.dto';
+import { UsuarioService } from 'src/modules/usuario/services/usuario.service';
 
 @Injectable()
 export class CuentaService {
@@ -17,6 +19,8 @@ export class CuentaService {
   constructor(
     @InjectRepository(CuentaEntity)
     private readonly cuentaRepository: Repository<CuentaEntity>,
+    @Inject(forwardRef(() => UsuarioService))
+    private usuarioServie: UsuarioService,
   ) { }
 
   public async findAll(queryDto: QueryDto): Promise<CuentaDTO[]> {
@@ -120,5 +124,12 @@ export class CuentaService {
 
   private async encryptPassword(password: string): Promise<string> {
     return bcrypt.hashSync(password, + process.env.HASH_SALT);
+  }
+
+  public async registrarUsuario(registrarUsuarioDto: RegistrarUsuarioDto): Promise<CuentaEntity> {
+    const { email, password, ...datosUsuario} = registrarUsuarioDto;
+    const cuenta = await this.createCuenta({email, password});
+    await this.usuarioServie.create({...datosUsuario, cuentaId: cuenta.id});
+    return this.findByEmail(cuenta.email);
   }
 }

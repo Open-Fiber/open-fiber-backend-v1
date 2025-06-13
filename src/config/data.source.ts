@@ -8,7 +8,7 @@ const configService = new ConfigService();
 export const DataSourceConfig: DataSourceOptions = {
   type: 'postgres',
   host: configService.get('DB_HOST'),
-  port: configService.get('DB_PORT'),
+  // port: configService.get('DB_PORT'),
   username: configService.get('DB_USERNAME'),
   password: configService.get('DB_PASSWORD'),
   database: configService.get('DB_DATABASE'),
@@ -17,13 +17,22 @@ export const DataSourceConfig: DataSourceOptions = {
   // synchronize: configService.get('APP_PROD') === 'true' ? true : false,
   synchronize: true,
   logging: false,
-  extra: {
-    ssl:
-      configService.get('APP_PROD') === 'true'
-        ? { rejectUnauthorized: false }
-        : null,
-    timezone: 'America/La_Paz'
+  ssl: {
+    rejectUnauthorized: false // Esto depende de tu configuración de seguridad
   },
+  extra: {
+    ssl: {
+      require: true,
+      rejectUnauthorized: false // Ten cuidado con esto en producción
+    }
+  },
+  // extra: {
+  //   ssl:
+  //     configService.get('APP_PROD') === 'true'
+  //       ? { rejectUnauthorized: false }
+  //       : null,
+  //   timezone: 'America/La_Paz'
+  // },
   namingStrategy: new SnakeNamingStrategy(),
 };
 

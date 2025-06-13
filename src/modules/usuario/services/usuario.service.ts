@@ -1,4 +1,4 @@
-import { Injectable, Logger, NotFoundException } from '@nestjs/common';
+import { forwardRef, Inject, Injectable, Logger, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { UsuarioEntity } from '../entities/usuario.entity';
@@ -13,6 +13,7 @@ export class UsuarioService {
   constructor(
     @InjectRepository(UsuarioEntity)
     private readonly usuarioRepository: Repository<UsuarioEntity>,
+    @Inject(forwardRef(()=>CuentaService))
     private readonly cuentaService: CuentaService,
   ) { }
 
