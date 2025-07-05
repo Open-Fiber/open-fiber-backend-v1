@@ -16,6 +16,7 @@ import { TecnologiaModule } from './modules/tecnologia/tecnologia.module';
 import { LikeModule } from './modules/like/like.module';
 import { CursoModule } from './modules/curso/curso.module';
 import { ClaseModule } from './modules/clase/clase.module';
+import { ComentarioModule } from './modules/comentario/comentario.module';
 
 @Module({
   imports: [
@@ -34,7 +35,8 @@ import { ClaseModule } from './modules/clase/clase.module';
     TecnologiaModule,
     LikeModule,
     CursoModule,
-    ClaseModule
+    ClaseModule,
+    ComentarioModule
   ],
 })
 export class AppModule {}
