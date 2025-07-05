@@ -13,6 +13,7 @@ import { HitoModule } from './modules/hitos/hito.module';
 import { ContextoDeAplicacionModule } from './modules/contexto_de_aplicacion/contexto-de-aplicacion.module';
 import { CasoDeUsoModule } from './modules/caso_de_uso/caso-de-uso.module';
 import { TecnologiaModule } from './modules/tecnologia/tecnologia.module';
+import { LikeModule } from './modules/like/like.module';
 
 @Module({
   imports: [
@@ -28,7 +29,8 @@ import { TecnologiaModule } from './modules/tecnologia/tecnologia.module';
     HitoModule,
     ContextoDeAplicacionModule,
     CasoDeUsoModule,
-    TecnologiaModule
+    TecnologiaModule,
+    LikeModule
   ],
 })
 export class AppModule {}

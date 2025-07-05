@@ -8,6 +8,7 @@ import { CasoDeUsoEntity } from 'src/modules/caso_de_uso/entities/caso-de-uso.en
 import { PasoConstruccionEntity } from 'src/modules/paso_construccion/entities/paso-construccion.entity';
 import { RecursoEntity } from 'src/modules/recurso/entities/recurso.entity';
 import { TecnologiaEntity } from 'src/modules/tecnologia/entities/tecnologia.entity';
+import { LikeEntity } from 'src/modules/like/entities/like.entity';
 
 @Entity('maquinas')
 @Check(`"categoria" IN ('estetica', 'electronica', 'mecanica', 'codigo', 'original')`)
@@ -59,6 +60,9 @@ export class MaquinaEntity extends BaseEntity {
 
   @ManyToOne(() => PasoConstruccionEntity, pasoConstruccion => pasoConstruccion.maquina)
   pasosConstruccion: PasoConstruccionEntity[];
+
+  @ManyToOne(() => LikeEntity, like => like.maquina)
+  likes: LikeEntity[];
   
   @ManyToMany(() => RecursoEntity, recurso => recurso.maquinas, { eager: true })
   @JoinTable({
