@@ -14,6 +14,8 @@ import { ContextoDeAplicacionModule } from './modules/contexto_de_aplicacion/con
 import { CasoDeUsoModule } from './modules/caso_de_uso/caso-de-uso.module';
 import { TecnologiaModule } from './modules/tecnologia/tecnologia.module';
 import { LikeModule } from './modules/like/like.module';
+import { CursoModule } from './modules/curso/curso.module';
+import { ClaseModule } from './modules/clase/clase.module';
 
 @Module({
   imports: [
@@ -30,7 +32,9 @@ import { LikeModule } from './modules/like/like.module';
     ContextoDeAplicacionModule,
     CasoDeUsoModule,
     TecnologiaModule,
-    LikeModule
+    LikeModule,
+    CursoModule,
+    ClaseModule
   ],
 })
 export class AppModule {}
