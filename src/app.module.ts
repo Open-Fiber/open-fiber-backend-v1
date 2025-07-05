@@ -8,6 +8,8 @@ import { UsuarioModule } from './modules/usuario/usuario.module';
 import { OrganizacionModule } from './modules/organizacion/organization.module';
 import { ProyectoModule } from './modules/proyecto/proyecto.module';
 import { MaquinaModule } from './modules/maquina/maquina.module';
+import { ContribuyenteModule } from './modules/contribuyente/contribuyente.module';
+import { HitoModule } from './modules/hitos/hito.module';
 
 @Module({
   imports: [
@@ -18,7 +20,9 @@ import { MaquinaModule } from './modules/maquina/maquina.module';
     OrganizacionModule,
     UsuarioModule,
     ProyectoModule,
-    MaquinaModule
+    MaquinaModule,
+    ContribuyenteModule,
+    HitoModule
   ],
 })
 export class AppModule {}

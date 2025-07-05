@@ -1,6 +1,8 @@
 import { Entity, Column, ManyToOne, Check, OneToMany } from 'typeorm';
 import { BaseEntity } from 'src/common/entities/base.entity';
 import { ProyectoEntity } from 'src/modules/proyecto/entities/proyecto.entity';
+import { ContribuyenteEntity } from 'src/modules/contribuyente/entities/contribuyente.entity';
+import { HitoEntity } from 'src/modules/hitos/entities/hito.entity';
 
 @Entity('maquinas')
 @Check(`"categoria" IN ('estetica', 'electronica', 'mecanica', 'codigo', 'original')`)
@@ -37,5 +39,11 @@ export class MaquinaEntity extends BaseEntity {
 
   @OneToMany(() => MaquinaEntity, maquina => maquina.maquinaOriginal)
   copias: MaquinaEntity[];
+
+  @ManyToOne(() => ContribuyenteEntity, contribuyente => contribuyente.maquina)
+  contribuyentes: ContribuyenteEntity[];
+
+  @ManyToOne(() => HitoEntity, hito => hito.maquina)
+  hitos: HitoEntity[];
 
 }
