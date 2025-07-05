@@ -11,6 +11,7 @@ import { MaquinaModule } from './modules/maquina/maquina.module';
 import { ContribuyenteModule } from './modules/contribuyente/contribuyente.module';
 import { HitoModule } from './modules/hitos/hito.module';
 import { ContextoDeAplicacionModule } from './modules/contexto_de_aplicacion/contexto-de-aplicacion.module';
+import { CasoDeUsoModule } from './modules/caso_de_uso/caso-de-uso.module';
 
 @Module({
   imports: [
@@ -24,7 +25,8 @@ import { ContextoDeAplicacionModule } from './modules/contexto_de_aplicacion/con
     MaquinaModule,
     ContribuyenteModule,
     HitoModule,
-    ContextoDeAplicacionModule
+    ContextoDeAplicacionModule,
+    CasoDeUsoModule
   ],
 })
 export class AppModule {}
