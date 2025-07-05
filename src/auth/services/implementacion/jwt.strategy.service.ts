@@ -7,6 +7,7 @@ import { IAuthToken } from '../../interfaces/authToken.interface';
 export class JwtStrategy implements ITokenStrategy {
   async validate(token: string): Promise<IAuthToken | false> {
     const result = authToken(token);
+    console.log(result)
     if (typeof result === 'string' || result.isExpired) return false;
     return result;
   }

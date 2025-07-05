@@ -40,11 +40,16 @@ export class AuthService {
     }
   }
 
-  async checkToken(token: string): Promise<IAuthToken | false> {
+  async checkToken(token: string): Promise<any | false> {
     try {
       const userToken = await this.tokenValidator.validateToken(token);
+      console.log(userToken);
       if (!userToken) return false;
-      return userToken;
+      const usuario = await this.usuarioService.findUsuarioByCuenta((userToken as IAuthToken).sub);
+      const {tipo, sub} = userToken as IAuthToken;
+      const { id, cuentaId, ... dataUser } = usuario
+      const data = { dataUser, tipoCuenta: tipo, cuenta: sub }
+      return data;
     } catch (error) {
       handlerError(error, this.logger);
     }
