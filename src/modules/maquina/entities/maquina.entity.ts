@@ -5,6 +5,7 @@ import { ContribuyenteEntity } from 'src/modules/contribuyente/entities/contribu
 import { HitoEntity } from 'src/modules/hitos/entities/hito.entity';
 import { ContextoDeAplicacionEntity } from 'src/modules/contexto_de_aplicacion/entities/contexto-de-aplicacion.entity';
 import { CasoDeUsoEntity } from 'src/modules/caso_de_uso/entities/caso-de-uso.entity';
+import { PasoConstruccionEntity } from 'src/modules/paso_construccion/entities/paso-construccion.entity';
 
 @Entity('maquinas')
 @Check(`"categoria" IN ('estetica', 'electronica', 'mecanica', 'codigo', 'original')`)
@@ -53,5 +54,9 @@ export class MaquinaEntity extends BaseEntity {
 
   @ManyToOne(() => CasoDeUsoEntity, casosDeUso => casosDeUso.maquina)
   casosDeUso: CasoDeUsoEntity[];
+
+  @ManyToOne(() => PasoConstruccionEntity, pasoConstruccion => pasoConstruccion.maquina)
+  pasosConstruccion: PasoConstruccionEntity[];
+  
 
 }
