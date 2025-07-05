@@ -12,6 +12,7 @@ import { ContribuyenteModule } from './modules/contribuyente/contribuyente.modul
 import { HitoModule } from './modules/hitos/hito.module';
 import { ContextoDeAplicacionModule } from './modules/contexto_de_aplicacion/contexto-de-aplicacion.module';
 import { CasoDeUsoModule } from './modules/caso_de_uso/caso-de-uso.module';
+import { TecnologiaModule } from './modules/tecnologia/tecnologia.module';
 
 @Module({
   imports: [
@@ -26,7 +27,8 @@ import { CasoDeUsoModule } from './modules/caso_de_uso/caso-de-uso.module';
     ContribuyenteModule,
     HitoModule,
     ContextoDeAplicacionModule,
-    CasoDeUsoModule
+    CasoDeUsoModule,
+    TecnologiaModule
   ],
 })
 export class AppModule {}

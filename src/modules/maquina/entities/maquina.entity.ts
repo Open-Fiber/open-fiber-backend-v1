@@ -7,6 +7,7 @@ import { ContextoDeAplicacionEntity } from 'src/modules/contexto_de_aplicacion/e
 import { CasoDeUsoEntity } from 'src/modules/caso_de_uso/entities/caso-de-uso.entity';
 import { PasoConstruccionEntity } from 'src/modules/paso_construccion/entities/paso-construccion.entity';
 import { RecursoEntity } from 'src/modules/recurso/entities/recurso.entity';
+import { TecnologiaEntity } from 'src/modules/tecnologia/entities/tecnologia.entity';
 
 @Entity('maquinas')
 @Check(`"categoria" IN ('estetica', 'electronica', 'mecanica', 'codigo', 'original')`)
@@ -67,4 +68,11 @@ export class MaquinaEntity extends BaseEntity {
   })
   recursos: RecursoEntity[];
 
+  @ManyToMany(() => TecnologiaEntity, tecnologia => tecnologia.maquinas, { eager: true })
+  @JoinTable({
+    name: 'maquina_tecnologia', // Nombre de la tabla intermedia
+    joinColumn: { name: 'maquina_id', referencedColumnName: 'id' },
+    inverseJoinColumn: { name: 'tecnologia_id', referencedColumnName: 'id' },
+  })
+  tecnologias: TecnologiaEntity[];
 }
