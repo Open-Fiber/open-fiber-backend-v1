@@ -1,39 +1,29 @@
 import { Injectable, Logger } from '@nestjs/common';
-
-import { handlerError } from '../common/utils/handlerError.utils';
-import { ROLES } from '../common/constants';
-import { CreateCuentaDto, CuentaDTO } from '../modules/cuenta/dto';
-import { CuentaService } from '../modules/cuenta/services/cuenta.service';
-import { TIPO_CUENTA } from '../common/constants/tipoCuenta';
+import { CuentaSeeder } from './cuenta.seeder';
+import { PermisoSeeder } from './permiso.seeder';
 
 @Injectable()
 export class SeedService {
-  private readonly logger = new Logger('SeederService');
+  private readonly logger = new Logger('SeedService');
 
-  constructor(private readonly cuentaService: CuentaService) { }
+  constructor(
+    private readonly cuentaSeeder: CuentaSeeder,
+    private readonly permisoSeeder: PermisoSeeder,
+  ) {}
 
   public async runSeeders() {
-    if (process.env.APP_PROD == true) return { message: 'No se puede ejecutar seeders en producción' };
-    try {
-      const cuentaSU: CreateCuentaDto = {
-        email: 'admin@openfiber.cds',
-        password: 'passwordAdminSU',
-        isActive: true,
-        tipo: TIPO_CUENTA.USER
-      }
-      await this.cuentaService.createCuenta(cuentaSU);
+    if (process.env.APP_PROD === true) {
+      return { message: 'No se puede ejecutar seeders en producción' };
+    }
 
-      const cuenta: CreateCuentaDto = {
-        email: 'admin@live.com',
-        password: 'adminOpenFiber',
-        isActive: true,
-        tipo: TIPO_CUENTA.USER
-      }
-      await this.cuentaService.createCuenta(cuenta);
+    try {
+      await this.permisoSeeder.run();
+      await this.cuentaSeeder.run();
 
       return { message: 'Seeders ejecutados correctamente' };
     } catch (error) {
-      handlerError(error, this.logger);
+      this.logger.error('Error al ejecutar seeders:', error);
+      throw error;
     }
   }
 }

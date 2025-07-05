@@ -24,5 +24,5 @@ export class CuentaEntity extends BaseEntity {
     isDeleted: boolean;
 
     @OneToMany(() => ProyectoEntity, proyecto => proyecto.cuenta)
-    proyectos: ProyectoEntity;
+    proyectos: ProyectoEntity[];
 }
