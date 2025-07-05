@@ -10,6 +10,7 @@ import { ProyectoModule } from './modules/proyecto/proyecto.module';
 import { MaquinaModule } from './modules/maquina/maquina.module';
 import { ContribuyenteModule } from './modules/contribuyente/contribuyente.module';
 import { HitoModule } from './modules/hitos/hito.module';
+import { ContextoDeAplicacionModule } from './modules/contexto_de_aplicacion/contexto-de-aplicacion.module';
 
 @Module({
   imports: [
@@ -22,7 +23,8 @@ import { HitoModule } from './modules/hitos/hito.module';
     ProyectoModule,
     MaquinaModule,
     ContribuyenteModule,
-    HitoModule
+    HitoModule,
+    ContextoDeAplicacionModule
   ],
 })
 export class AppModule {}

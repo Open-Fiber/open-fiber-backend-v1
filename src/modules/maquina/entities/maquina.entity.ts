@@ -3,6 +3,7 @@ import { BaseEntity } from 'src/common/entities/base.entity';
 import { ProyectoEntity } from 'src/modules/proyecto/entities/proyecto.entity';
 import { ContribuyenteEntity } from 'src/modules/contribuyente/entities/contribuyente.entity';
 import { HitoEntity } from 'src/modules/hitos/entities/hito.entity';
+import { ContextoDeAplicacionEntity } from 'src/modules/contexto_de_aplicacion/entities/contexto-de-aplicacion.entity';
 
 @Entity('maquinas')
 @Check(`"categoria" IN ('estetica', 'electronica', 'mecanica', 'codigo', 'original')`)
@@ -45,5 +46,8 @@ export class MaquinaEntity extends BaseEntity {
 
   @ManyToOne(() => HitoEntity, hito => hito.maquina)
   hitos: HitoEntity[];
+
+  @ManyToOne(() => ContextoDeAplicacionEntity, contextosDeAplicacion => contextosDeAplicacion.maquina)
+  contextosDeAplicacion: ContextoDeAplicacionEntity[];
 
 }
