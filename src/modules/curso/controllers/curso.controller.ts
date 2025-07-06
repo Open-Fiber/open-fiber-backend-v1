@@ -3,11 +3,11 @@ import {
   Controller, Post, Body, Get, Param, Put, Delete, UseGuards
 } from '@nestjs/common';
 import { ApiBearerAuth, ApiTags, ApiOperation, ApiResponse } from '@nestjs/swagger';
-import { CursoService } from '../services/curso.service';
-import { CreateCursoDto } from '../dto/create-curso.dto';
-import { UpdateCursoDto } from '../dto/update-curso.dto';
-import { ResponseCursoDto } from '../dto/response-curso.dto';
-import { AuthGuard, PermisoGuard } from 'src/auth/guards';
+import { CursoService } from './../services/curso.service';
+import { CreateCursoDto } from './../dto/create-curso.dto';
+import { UpdateCursoDto } from './../dto/update-curso.dto';
+import { ResponseCursoDto } from './../dto/response-curso.dto';
+import { AuthGuard, PermisoGuard } from './../../../auth/guards';
 
 @ApiBearerAuth()
 @ApiTags('Cursos')

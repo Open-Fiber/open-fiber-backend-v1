@@ -1,6 +1,6 @@
 // src/modules/curso/dto/response-curso.dto.ts
 import { ApiProperty } from '@nestjs/swagger';
-import { CursoEntity } from '../entities/curso.entity';
+import { CursoEntity } from './../entities/curso.entity';
 
 export class ResponseCursoDto {
   @ApiProperty()

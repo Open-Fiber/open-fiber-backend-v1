@@ -1,8 +1,8 @@
 // src/modules/curso/entities/curso.entity.ts
 import { Entity, Column, ManyToOne, OneToMany } from 'typeorm';
-import { BaseEntity } from 'src/common/entities/base.entity';
-import { CuentaEntity } from 'src/modules/cuenta/entities/cuenta.entity'; // Asegúrate de tener esta entidad
-import { ClaseEntity } from 'src/modules/clase/entities/clase.entity';
+import { BaseEntity } from './../../../common/entities/base.entity';
+import { CuentaEntity } from './../../../modules/cuenta/entities/cuenta.entity'; // Asegúrate de tener esta entidad
+import { ClaseEntity } from './../../../modules/clase/entities/clase.entity';
 
 @Entity('cursos')
 export class CursoEntity extends BaseEntity {
