@@ -24,7 +24,7 @@ export class CuentaEntity extends BaseEntity {
     @Column({ name: 'is_deleted', type: 'boolean', default: false })
     isDeleted: boolean;
 
-    @OneToMany(() => ProyectoEntity, proyecto => proyecto.cuenta)
+    @OneToMany(() => ProyectoEntity, proyecto => proyecto.creador)
     proyectos: ProyectoEntity[];
 
     @OneToMany(() => CursoEntity, curso => curso.creador)

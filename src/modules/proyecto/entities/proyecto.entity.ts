@@ -18,7 +18,7 @@ export class ProyectoEntity extends BaseEntity {
   isDeleted: boolean;
 
   @ManyToOne(() => CuentaEntity, cuenta => cuenta.proyectos, { eager: true })
-  cuenta: CuentaEntity;
+  creador: CuentaEntity;
 
   @OneToMany(() => MaquinaEntity, maquina => maquina.proyecto)
   maquinas: MaquinaEntity[];

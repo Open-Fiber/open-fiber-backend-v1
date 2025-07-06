@@ -25,7 +25,7 @@ export class ProyectoService {
     }
 
     const proyecto = this.proyectoRepository.create({
-      ...dto, cuenta: cuenta
+      ...dto, creador: cuenta
     });
 
     return this.proyectoRepository.save(proyecto);
@@ -50,7 +50,7 @@ export class ProyectoService {
   async findByCuenta(cuentaId: string): Promise<ProyectoEntity[]> {
     return this.proyectoRepository.find({
       where: {
-        cuenta: { id: cuentaId },
+        creador: { id: cuentaId },
         isDeleted: false,
       },
     });

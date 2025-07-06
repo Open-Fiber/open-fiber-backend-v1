@@ -13,4 +13,8 @@ export class CreateProyectoDto {
   @ApiProperty({ example: 'Este sistema permitirá gestionar tareas diarias con control de estado y asignación de responsables.' })
   @IsString()
   descripcion: string;
+
+  @ApiProperty({ example: 'uuid-de-la-cuenta-creadora' })
+  @IsUUID()
+  creador: string;
 }

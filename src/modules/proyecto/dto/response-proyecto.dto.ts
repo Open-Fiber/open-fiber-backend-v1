@@ -1,7 +1,7 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { IsEmail, IsEnum, IsNotEmpty, IsOptional, IsString, IsUUID } from 'class-validator';
-import { ProyectoEntity } from '../entities/proyecto.entity';
-import { CuentaEntity } from 'src/modules/cuenta/entities/cuenta.entity';
+import { ProyectoEntity } from './../entities/proyecto.entity';
+import { CuentaEntity } from './../../../modules/cuenta/entities/cuenta.entity';
 
 export class ResponseProyectoDTO {
     @ApiProperty({
@@ -27,7 +27,7 @@ export class ResponseProyectoDTO {
 
     @ApiProperty({ example: 'b45c3a1e-d04e-4b0e-bc8e-9bb0f0e20b92', description: 'UUID de la cuenta creadora del proyecto' })
     @IsUUID()
-    cuentaId: string;
+    creadorId: string;
 
 
     public constructor(proyecto: ProyectoEntity) {
@@ -35,6 +35,6 @@ export class ResponseProyectoDTO {
         this.titulo = proyecto.titulo;
         this.objetivo = proyecto.objetivo;
         this.descripcion = proyecto.descripcion;
-        this.cuentaId = proyecto.cuenta.id;
+        this.creadorId = proyecto.creador.id;
     }
 }

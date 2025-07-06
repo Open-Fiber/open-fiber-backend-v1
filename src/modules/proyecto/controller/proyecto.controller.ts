@@ -14,7 +14,7 @@ import { CreateProyectoDto } from './../dto/create-proyecto.dto';
 import { UpdateProyectoDto } from './../dto/update-proyecto.dto';
 import { GetCuenta } from './../../../auth/decorators';
 import { AuthGuard, PermisoGuard } from './../../../auth/guards';
-import { ResponseProyectoDTO } from '../dto/response-proyecto.dto';
+import { ResponseProyectoDTO } from './../dto/response-proyecto.dto';
 
 @ApiBearerAuth()
 @ApiTags('Proyectos')
