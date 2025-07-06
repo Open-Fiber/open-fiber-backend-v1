@@ -1,8 +1,8 @@
 import { Body, Controller, Delete, Get, Param, Patch, Post, Put } from '@nestjs/common';
 import { ApiTags, ApiResponse, ApiOperation } from '@nestjs/swagger';
-import { CuentaService } from 'src/modules/cuenta/services/cuenta.service';
-import { RegistrarUsuarioDto } from '../dto/RegistrarUsuario.dto';
-import { CuentaResponseDTO } from 'src/modules/cuenta/dto/cuenta-response.dto';
+import { CuentaService } from './../../modules/cuenta/services/cuenta.service';
+import { RegistrarUsuarioDto } from './../dto/RegistrarUsuario.dto';
+import { CuentaResponseDTO } from './../../modules/cuenta/dto/cuenta-response.dto';
 
 @ApiTags('Registrar')
 @Controller('registrar')

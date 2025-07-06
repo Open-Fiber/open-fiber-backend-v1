@@ -1,7 +1,7 @@
 import * as jwt from 'jsonwebtoken';
 
-import { IAuthTokenResult } from '../../auth/interfaces/auth.interface';
-import { IAuthToken } from '../../auth/interfaces/authToken.interface';
+import { IAuthTokenResult } from './../../auth/interfaces/auth.interface';
+import { IAuthToken } from './../../auth/interfaces/authToken.interface';
 
 export const authToken = (token: string): IAuthToken | string => {
   try {

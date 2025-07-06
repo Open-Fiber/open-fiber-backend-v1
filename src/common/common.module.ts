@@ -1,5 +1,5 @@
 import { Module } from '@nestjs/common';
-import { CuentaModule } from 'src/modules/cuenta/cuenta.module';
+import { CuentaModule } from './../modules/cuenta/cuenta.module';
 import { RegistrarController } from './controllers/register.controller';
 
 @Module({

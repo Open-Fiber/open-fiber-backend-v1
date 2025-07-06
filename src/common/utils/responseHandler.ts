@@ -1,4 +1,4 @@
-import { ResponseMessage } from "../interfaces/responseMessage.interface";
+import { ResponseMessage } from "./../interfaces/responseMessage.interface";
 
 export const responseHandler = (responseOptions: ResponseMessage): ResponseMessage => {
     const { message, error, statusCode = 500, data } = responseOptions;
