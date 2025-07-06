@@ -20,6 +20,7 @@ import { ComentarioModule } from './modules/comentario/comentario.module';
 import { RecursoClaseModule } from './modules/recurso_clase/recurso-clase.module';
 import { RedSocialModule } from './modules/red_social/red_social.module';
 import { MiembroModule } from './modules/miembro/miembro.module';
+import { CompartidoModule } from './modules/compartido/compartido.module';
 
 @Module({
   imports: [
@@ -42,7 +43,8 @@ import { MiembroModule } from './modules/miembro/miembro.module';
     RecursoClaseModule,
     ComentarioModule,
     RedSocialModule,
-    MiembroModule
+    MiembroModule,
+    CompartidoModule
   ],
 })
 export class AppModule {}

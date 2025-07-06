@@ -6,15 +6,12 @@ import { UsuarioEntity } from '../usuario/entities/usuario.entity'; // ¡Asegúr
 import { OrganizacionEntity } from '../organizacion/entities/organizacion.entity'; // ¡Asegúrate de importar OrganizacionEntity aquí!
 import { MiembroService } from './services/miembro.service';
 import { MiembroController } from './controllers/miembro.controller';
-import { UsuarioModule } from '../usuario/usuario.module'; // Asumo que tienes UsuarioModule
-import { OrganizacionModule } from '../organizacion/organizacion.module'; // Asumo que tienes OrganizacionModule
+import { CuentaModule } from '../cuenta/cuenta.module';
 
 @Module({
     imports: [
         TypeOrmModule.forFeature([MiembroEntity, UsuarioEntity, OrganizacionEntity]),
-        // Se usan forwardRef si hay dependencias circulares, o simplemente como importación.
-        forwardRef(() => UsuarioModule),
-        forwardRef(() => OrganizacionModule),
+        forwardRef(() => CuentaModule),
     ],
     controllers: [MiembroController],
     providers: [MiembroService],
