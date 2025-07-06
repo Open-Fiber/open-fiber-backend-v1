@@ -1,6 +1,6 @@
 // src/modules/clase/dto/response-clase.dto.ts
 import { ApiProperty } from '@nestjs/swagger';
-import { ClaseEntity } from '../entities/clase.entity';
+import { ClaseEntity } from './../entities/clase.entity';
 
 export class ResponseClaseDto {
   @ApiProperty()

@@ -3,11 +3,11 @@ import {
   Controller, Post, Body, Get, Param, Put, Delete, UseGuards
 } from '@nestjs/common';
 import { ApiBearerAuth, ApiTags, ApiOperation, ApiResponse } from '@nestjs/swagger';
-import { ClaseService } from '../services/clase.service';
-import { CreateClaseDto } from '../dto/create-clase.dto';
-import { UpdateClaseDto } from '../dto/update-clase.dto';
-import { ResponseClaseDto } from '../dto/response-clase.dto';
-import { AuthGuard, PermisoGuard } from 'src/auth/guards';
+import { AuthGuard, PermisoGuard } from './../../../auth/guards';
+import { ClaseService } from './../services/clase.service';
+import { CreateClaseDto } from './../dto/create-clase.dto';
+import { UpdateClaseDto } from './../dto/update-clase.dto';
+import { ResponseClaseDto } from './../dto/response-clase.dto';
 
 @ApiBearerAuth()
 @ApiTags('Clases')
