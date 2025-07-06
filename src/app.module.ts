@@ -17,6 +17,7 @@ import { LikeModule } from './modules/like/like.module';
 import { CursoModule } from './modules/curso/curso.module';
 import { ClaseModule } from './modules/clase/clase.module';
 import { ComentarioModule } from './modules/comentario/comentario.module';
+import { RecursoClaseModule } from './modules/recurso_clase/recurso-clase.module';
 
 @Module({
   imports: [
@@ -36,6 +37,7 @@ import { ComentarioModule } from './modules/comentario/comentario.module';
     LikeModule,
     CursoModule,
     ClaseModule,
+    RecursoClaseModule,
     ComentarioModule
   ],
 })

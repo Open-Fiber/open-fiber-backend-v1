@@ -6,12 +6,13 @@ import { ClaseEntity } from '../clase/entities/clase.entity'; // ¡Asegúrate de
 import { RecursoClaseService } from './services/recurso-clase.service';
 import { RecursoClaseController } from './controllers/recurso-clase.controller';
 import { ClaseModule } from '../clase/clase.module'; // Dependencia a ClaseModule
+import { CuentaModule } from '../cuenta/cuenta.module';
 
 @Module({
     imports: [
         TypeOrmModule.forFeature([RecursoClaseEntity, ClaseEntity]),
         // Es importante que ClaseModule esté importado en el forwardRef si hay dependencias circulares.
-        forwardRef(() => ClaseModule),
+        forwardRef(() => CuentaModule),
     ],
     controllers: [RecursoClaseController],
     providers: [RecursoClaseService],
