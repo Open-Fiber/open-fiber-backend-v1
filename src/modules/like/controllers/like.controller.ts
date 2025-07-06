@@ -3,10 +3,10 @@ import {
   Controller, Post, Body, Get, Param, Delete, UseGuards
 } from '@nestjs/common';
 import { ApiBearerAuth, ApiTags, ApiOperation, ApiResponse } from '@nestjs/swagger';
-import { LikeService } from '../services/like.service';
-import { CreateLikeDto } from '../dto/create-like.dto';
-import { ResponseLikeDto } from '../dto/response-like.dto';
-import { AuthGuard, PermisoGuard } from 'src/auth/guards';
+import { LikeService } from './../services/like.service';
+import { CreateLikeDto } from './../dto/create-like.dto';
+import { ResponseLikeDto } from './../dto/response-like.dto';
+import { AuthGuard, PermisoGuard } from './../../../auth/guards';
 
 @ApiBearerAuth()
 @ApiTags('Likes')

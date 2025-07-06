@@ -2,10 +2,10 @@
 import { Injectable, NotFoundException, ConflictException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { LikeEntity } from '../entities/like.entity';
-import { CreateLikeDto } from '../dto/create-like.dto';
-import { MaquinaEntity } from 'src/modules/maquina/entities/maquina.entity';
-import { CuentaEntity } from 'src/modules/cuenta/entities/cuenta.entity'; // Importa CuentaEntity
+import { LikeEntity } from './../entities/like.entity';
+import { CreateLikeDto } from './../dto/create-like.dto';
+import { MaquinaEntity } from './../../../modules/maquina/entities/maquina.entity';
+import { CuentaEntity } from './../../../modules/cuenta/entities/cuenta.entity'; // Importa CuentaEntity
 
 @Injectable()
 export class LikeService {

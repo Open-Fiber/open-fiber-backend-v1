@@ -1,8 +1,8 @@
 // src/modules/like/entities/like.entity.ts
 import { Entity, ManyToOne, Column } from 'typeorm';
-import { BaseEntity } from 'src/common/entities/base.entity';
-import { MaquinaEntity } from 'src/modules/maquina/entities/maquina.entity';
-import { CuentaEntity } from 'src/modules/cuenta/entities/cuenta.entity'; // Asegúrate de tener esta entidad
+import { BaseEntity } from './../../../common/entities/base.entity';
+import { MaquinaEntity } from './../../../modules/maquina/entities/maquina.entity';
+import { CuentaEntity } from './../../../modules/cuenta/entities/cuenta.entity'; // Asegúrate de tener esta entidad
 
 @Entity('likes')
 export class LikeEntity extends BaseEntity {

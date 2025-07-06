@@ -1,6 +1,6 @@
 // src/modules/like/dto/response-like.dto.ts
 import { ApiProperty } from '@nestjs/swagger';
-import { LikeEntity } from '../entities/like.entity';
+import { LikeEntity } from './../entities/like.entity';
 
 export class ResponseLikeDto {
   @ApiProperty()
