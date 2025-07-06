@@ -1,4 +1,4 @@
-import { TIPO_CUENTA } from "src/common/constants/tipoCuenta";
+import { TIPO_CUENTA } from "./../../../common/constants/tipoCuenta";
 
 export interface ICuenta {
     id: string;

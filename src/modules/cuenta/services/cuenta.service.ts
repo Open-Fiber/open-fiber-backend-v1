@@ -3,14 +3,14 @@ import { BadRequestException, forwardRef, Inject, Injectable, Logger, NotFoundEx
 import { InjectRepository } from '@nestjs/typeorm';
 import * as bcrypt from 'bcrypt';
 
-import { CreateCuentaDto, CuentaDTO } from '../dto/';
-import { CuentaEntity } from '../entities/cuenta.entity';
-import { handlerError } from '../../../common/utils/handlerError.utils';
-import { QueryDto } from '../../../common/dto/query.dto';
-import { ResponseMessage } from '../../../common/interfaces/responseMessage.interface';
-import { CuentaResponseDTO } from '../dto/cuenta-response.dto';
-import { RegistrarUsuarioDto } from '../../../common/dto/RegistrarUsuario.dto';
-import { UsuarioService } from 'src/modules/usuario/services/usuario.service';
+import { CreateCuentaDto, CuentaDTO } from './../dto/';
+import { CuentaEntity } from './../entities/cuenta.entity';
+import { handlerError } from './../../../common/utils/handlerError.utils';
+import { QueryDto } from './../../../common/dto/query.dto';
+import { ResponseMessage } from './../../../common/interfaces/responseMessage.interface';
+import { CuentaResponseDTO } from './../dto/cuenta-response.dto';
+import { RegistrarUsuarioDto } from './../../../common/dto/RegistrarUsuario.dto';
+import { UsuarioService } from './../../../modules/usuario/services/usuario.service';
 
 @Injectable()
 export class CuentaService {

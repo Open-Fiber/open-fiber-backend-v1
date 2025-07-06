@@ -1,6 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { IsBoolean, IsEmail, IsEnum, IsNotEmpty, IsOptional, IsString, Matches, MaxLength, MinLength } from 'class-validator';
-import { TIPO_CUENTA } from '../../../common/constants/tipoCuenta';
+import { TIPO_CUENTA } from './../../../common/constants/tipoCuenta';
 
 export class CreateCuentaDto {
   @ApiProperty({

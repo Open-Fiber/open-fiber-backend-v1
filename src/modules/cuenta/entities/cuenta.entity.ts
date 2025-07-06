@@ -3,7 +3,7 @@ import { Exclude } from "class-transformer";
 import { BaseEntity } from "./../../../common/entities/base.entity";
 import { TIPO_CUENTA } from "./../../../common/constants/tipoCuenta";
 import { ProyectoEntity } from "./../../../modules/proyecto/entities/proyecto.entity";
-import { CursoEntity } from "src/modules/curso/entities/curso.entity";
+import { CursoEntity } from "./../../../modules/curso/entities/curso.entity";
 
 @Entity({ name: 'cuenta' })
 export class CuentaEntity extends BaseEntity {

@@ -1,7 +1,7 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { IsEmail, IsEnum, IsNotEmpty, IsOptional, IsString } from 'class-validator';
-import { CuentaEntity } from '../entities/cuenta.entity';
-import { TIPO_CUENTA } from '../../../common/constants/tipoCuenta';
+import { CuentaEntity } from './../entities/cuenta.entity';
+import { TIPO_CUENTA } from './../../../common/constants/tipoCuenta';
 
 export class CuentaResponseDTO {
     @ApiProperty({

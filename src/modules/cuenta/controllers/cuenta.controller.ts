@@ -1,12 +1,12 @@
 import { Body, Controller, Get, Delete, Param, UseGuards, ParseUUIDPipe, Query, Post } from '@nestjs/common';
 import { ApiBearerAuth, ApiOperation, ApiParam, ApiQuery, ApiResponse, ApiTags } from '@nestjs/swagger/dist';
 
-import { RolesAccess } from '../../../auth/decorators/roles.decorator';
-import { AuthGuard, RolesGuard } from '../../../auth/guards/';
-import { CreateCuentaDto, CuentaDTO } from '../dto/';
-import { CuentaService } from '../services/cuenta.service';
-import { QueryDto } from '../../../common/dto/query.dto';
-import { ResponseMessage } from '../../../common/interfaces/responseMessage.interface';
+import { RolesAccess } from './../../../auth/decorators/roles.decorator';
+import { AuthGuard, RolesGuard } from './../../../auth/guards/';
+import { CreateCuentaDto, CuentaDTO } from './../dto/';
+import { CuentaService } from './../services/cuenta.service';
+import { QueryDto } from './../../../common/dto/query.dto';
+import { ResponseMessage } from './../../../common/interfaces/responseMessage.interface';
 
 @ApiTags('Cuenta')
 // @ApiBearerAuth()
