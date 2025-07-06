@@ -4,7 +4,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { RedSocialEntity } from './entities/red-social.entity';
 import { RedSocialService } from './services/red-social.service';
 import { RedSocialController } from './controllers/red-social.controller';
-import { CuentaModule } from '../cuenta/cuenta.module';
+import { CuentaModule } from './../cuenta/cuenta.module';
 
 @Module({
     imports: [

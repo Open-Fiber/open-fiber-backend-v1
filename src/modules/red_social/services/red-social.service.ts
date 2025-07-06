@@ -2,9 +2,9 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { RedSocialEntity } from '../entities/red-social.entity';
-import { CreateRedSocialDto } from '../dto/create-red-social.dto';
-import { UpdateRedSocialDto } from '../dto/update-red-social.dto';
+import { RedSocialEntity } from './../entities/red-social.entity';
+import { CreateRedSocialDto } from './../dto/create-red-social.dto';
+import { UpdateRedSocialDto } from './../dto/update-red-social.dto';
 
 @Injectable()
 export class RedSocialService {

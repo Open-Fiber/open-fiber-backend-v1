@@ -3,11 +3,11 @@ import {
   Controller, Post, Body, Get, Param, Put, Delete, UseGuards
 } from '@nestjs/common';
 import { ApiBearerAuth, ApiTags, ApiOperation, ApiResponse } from '@nestjs/swagger';
-import { RedSocialService } from '../services/red-social.service';
-import { CreateRedSocialDto } from '../dto/create-red-social.dto';
-import { UpdateRedSocialDto } from '../dto/update-red-social.dto';
-import { ResponseRedSocialDto } from '../dto/response-red-social.dto';
-import { AuthGuard, PermisoGuard } from 'src/auth/guards';
+import { RedSocialService } from './../services/red-social.service';
+import { CreateRedSocialDto } from './../dto/create-red-social.dto';
+import { UpdateRedSocialDto } from './../dto/update-red-social.dto';
+import { ResponseRedSocialDto } from './../dto/response-red-social.dto';
+import { AuthGuard, PermisoGuard } from './../../../auth/guards';
 
 @ApiBearerAuth()
 @ApiTags('Redes Sociales')

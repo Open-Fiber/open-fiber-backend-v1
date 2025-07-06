@@ -1,6 +1,6 @@
 // src/modules/red-social/entities/red-social.entity.ts
 import { Entity, Column } from 'typeorm';
-import { BaseEntity } from 'src/common/entities/base.entity';
+import { BaseEntity } from './../../../common/entities/base.entity';
 
 @Entity('redes_sociales')
 export class RedSocialEntity extends BaseEntity {

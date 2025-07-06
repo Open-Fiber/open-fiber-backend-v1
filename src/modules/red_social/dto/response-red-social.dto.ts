@@ -1,6 +1,6 @@
 // src/modules/red-social/dto/response-red-social.dto.ts
 import { ApiProperty } from '@nestjs/swagger';
-import { RedSocialEntity } from '../entities/red-social.entity';
+import { RedSocialEntity } from './../entities/red-social.entity';
 
 export class ResponseRedSocialDto {
   @ApiProperty()
