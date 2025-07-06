@@ -1,13 +1,12 @@
 import { Entity, Column, ManyToOne, Check, OneToMany, ManyToMany, JoinTable } from 'typeorm';
-import { BaseEntity } from 'src/common/entities/base.entity';
-import { ProyectoEntity } from 'src/modules/proyecto/entities/proyecto.entity';
-import { ContribuyenteEntity } from 'src/modules/contribuyente/entities/contribuyente.entity';
-import { HitoEntity } from 'src/modules/hitos/entities/hito.entity';
-import { ContextoDeAplicacionEntity } from 'src/modules/contexto_de_aplicacion/entities/contexto-de-aplicacion.entity';
-import { CasoDeUsoEntity } from 'src/modules/caso_de_uso/entities/caso-de-uso.entity';
-import { PasoConstruccionEntity } from 'src/modules/paso_construccion/entities/paso-construccion.entity';
-import { RecursoEntity } from 'src/modules/recurso/entities/recurso.entity';
-import { LikeEntity } from 'src/modules/like/entities/like.entity';
+import { BaseEntity } from './../../../common/entities/base.entity';
+import { ProyectoEntity } from './../../../modules/proyecto/entities/proyecto.entity';
+import { ContribuyenteEntity } from './../../../modules/contribuyente/entities/contribuyente.entity';
+import { HitoEntity } from './../../../modules/hitos/entities/hito.entity';
+import { ContextoDeAplicacionEntity } from './../../../modules/contexto_de_aplicacion/entities/contexto-de-aplicacion.entity';
+import { CasoDeUsoEntity } from './../../../modules/caso_de_uso/entities/caso-de-uso.entity';
+import { PasoConstruccionEntity } from './../../../modules/paso_construccion/entities/paso-construccion.entity';
+import { LikeEntity } from './../../../modules/like/entities/like.entity';
 
 @Entity('maquinas')
 @Check(`"categoria" IN ('estetica', 'electronica', 'mecanica', 'codigo', 'original')`)

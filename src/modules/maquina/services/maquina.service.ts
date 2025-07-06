@@ -1,10 +1,10 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { MaquinaEntity } from '../entities/maquina.entity';
-import { CreateMaquinaDto } from '../dto/create-maquina.dto';
-import { UpdateMaquinaDto } from '../dto/update-maquina.dto';
-import { ProyectoEntity } from 'src/modules/proyecto/entities/proyecto.entity';
+import { MaquinaEntity } from './../entities/maquina.entity';
+import { CreateMaquinaDto } from './../dto/create-maquina.dto';
+import { UpdateMaquinaDto } from './../dto/update-maquina.dto';
+import { ProyectoEntity } from './../../../modules/proyecto/entities/proyecto.entity';
 
 @Injectable()
 export class MaquinaService {
@@ -16,6 +16,23 @@ export class MaquinaService {
     ) { }
 
     async create(dto: CreateMaquinaDto): Promise<MaquinaEntity> {
+        const proyecto = await this.proyectoRepository.findOneBy({ id: dto.proyectoId });
+        if (!proyecto) {
+            throw new NotFoundException('Proyecto no encontrado');
+        }
+        let maquinaOriginal = null;
+        if (dto.maquinaOriginalId) {
+            maquinaOriginal = await this.maquinaRepository.findOneBy({ id: dto.maquinaOriginalId });
+            if (!maquinaOriginal) {
+                throw new NotFoundException('Máquina original no encontrada');
+            }
+        }
+        const maquina = this.maquinaRepository.create({ ...dto, proyecto, maquinaOriginal });
+
+        return this.maquinaRepository.save(maquina);
+    }
+
+    async copy(dto: CreateMaquinaDto): Promise<MaquinaEntity> {
         const proyecto = await this.proyectoRepository.findOneBy({ id: dto.proyectoId });
         if (!proyecto) {
             throw new NotFoundException('Proyecto no encontrado');
