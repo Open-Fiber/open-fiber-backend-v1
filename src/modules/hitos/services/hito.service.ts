@@ -2,10 +2,10 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { HitoEntity } from '../entities/hito.entity';
-import { CreateHitoDto } from '../dto/create-hito.dto';
-import { UpdateHitoDto } from '../dto/update-hito.dto';
-import { MaquinaEntity } from 'src/modules/maquina/entities/maquina.entity';
+import { HitoEntity } from './../entities/hito.entity';
+import { CreateHitoDto } from './../dto/create-hito.dto';
+import { UpdateHitoDto } from './../dto/update-hito.dto';
+import { MaquinaEntity } from './../../../modules/maquina/entities/maquina.entity';
 
 @Injectable()
 export class HitoService {
