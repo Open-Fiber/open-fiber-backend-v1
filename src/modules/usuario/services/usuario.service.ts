@@ -1,10 +1,10 @@
 import { forwardRef, Inject, Injectable, Logger, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { UsuarioEntity } from '../entities/usuario.entity';
-import { CreateUsuarioDto, UpdateUsuarioDto, UsuarioDto } from '../dto/';
-import { CuentaService } from 'src/modules/cuenta/services/cuenta.service';
-import { handlerError } from 'src/common/utils/handlerError.utils';
+import { UsuarioEntity } from './../entities/usuario.entity';
+import { CreateUsuarioDto, UpdateUsuarioDto, UsuarioDto } from './../dto/';
+import { CuentaService } from './../../cuenta/services/cuenta.service';
+import { handlerError } from './../../../common/utils/handlerError.utils';
 
 @Injectable()
 export class UsuarioService {

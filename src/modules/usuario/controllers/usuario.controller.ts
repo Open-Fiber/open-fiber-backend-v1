@@ -1,8 +1,8 @@
 import { Body, Controller, Delete, Get, Param, Patch, Post, Put } from '@nestjs/common';
-import { UsuarioService } from '../services/usuario.service';
-import { CreateUsuarioDto, UpdateUsuarioDto, UsuarioDto } from '../dto';
 import { ApiTags, ApiResponse, ApiOperation } from '@nestjs/swagger';
-import { UpdateRolUsuarioDto } from '../dto/updateRolUsuario.dto';
+import { UsuarioService } from './../services/usuario.service';
+import { CreateUsuarioDto, UpdateUsuarioDto, UsuarioDto } from './../dto';
+import { UpdateRolUsuarioDto } from './../dto/updateRolUsuario.dto';
 
 @ApiTags('Usuarios')
 @Controller('usuarios')

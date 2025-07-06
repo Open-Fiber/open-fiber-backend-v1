@@ -1,8 +1,8 @@
 import { Column, Entity, JoinColumn, ManyToOne, OneToMany, OneToOne } from "typeorm";
-import { BaseEntity } from "../../../common/entities/base.entity";
-import { CuentaEntity } from "../../../modules/cuenta/entities/cuenta.entity";
-import { GENERO } from "../../../common/constants/genero";
-import { RolEntity } from "../../../auth/entities/rol.entity";
+import { BaseEntity } from "./../../../common/entities/base.entity";
+import { CuentaEntity } from "./../../../modules/cuenta/entities/cuenta.entity";
+import { GENERO } from "./../../../common/constants/genero";
+import { RolEntity } from "./../../../auth/entities/rol.entity";
 
 @Entity({ name: 'usuario' })
 export class UsuarioEntity extends BaseEntity {

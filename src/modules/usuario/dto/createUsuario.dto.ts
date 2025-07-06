@@ -1,6 +1,6 @@
 import { IsDate, IsEnum, IsNotEmpty, IsOptional, IsString, MaxLength } from "class-validator";
-import { GENERO } from "../../../common/constants/genero";
 import { ApiProperty } from "@nestjs/swagger";
+import { GENERO } from "./../../../common/constants/genero";
 
 export class CreateUsuarioDto {
     @ApiProperty({

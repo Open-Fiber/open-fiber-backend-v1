@@ -1,8 +1,7 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { IsDate, IsEnum, IsNotEmpty, IsOptional, IsString, MinLength } from 'class-validator';
 import { UsuarioEntity } from './../entities/usuario.entity';
-import { GENERO } from 'src/common/constants/genero';
-import { UUID } from 'crypto';
+import { GENERO } from './../../../common/constants/genero';
 
 export class UsuarioDto {
     @ApiProperty({
