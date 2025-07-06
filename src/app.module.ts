@@ -18,6 +18,7 @@ import { CursoModule } from './modules/curso/curso.module';
 import { ClaseModule } from './modules/clase/clase.module';
 import { ComentarioModule } from './modules/comentario/comentario.module';
 import { RecursoClaseModule } from './modules/recurso_clase/recurso-clase.module';
+import { RedSocialModule } from './modules/red_social/red_social.module';
 
 @Module({
   imports: [
@@ -38,7 +39,8 @@ import { RecursoClaseModule } from './modules/recurso_clase/recurso-clase.module
     CursoModule,
     ClaseModule,
     RecursoClaseModule,
-    ComentarioModule
+    ComentarioModule,
+    RedSocialModule
   ],
 })
 export class AppModule {}
