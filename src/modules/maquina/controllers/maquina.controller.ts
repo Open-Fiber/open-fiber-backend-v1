@@ -9,11 +9,11 @@ import {
   UseGuards,
 } from '@nestjs/common';
 import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
-import { MaquinaService } from '../services/maquina.service';
-import { CreateMaquinaDto } from '../dto/create-maquina.dto';
-import { UpdateMaquinaDto } from '../dto/update-maquina.dto';
-import { AuthGuard, PermisoGuard } from 'src/auth/guards';
-import { ResponseMaquinaDto } from '../dto/response-maquina.dto';
+import { MaquinaService } from './../services/maquina.service';
+import { CreateMaquinaDto } from './../dto/create-maquina.dto';
+import { UpdateMaquinaDto } from './../dto/update-maquina.dto';
+import { AuthGuard, PermisoGuard } from './../../../auth/guards';
+import { ResponseMaquinaDto } from './../dto/response-maquina.dto';
 
 @ApiBearerAuth()
 @ApiTags('Máquinas')
@@ -25,6 +25,12 @@ export class MaquinaController {
   @Post()
   async create(@Body() dto: CreateMaquinaDto) {
     const maquina = await this.maquinaService.create(dto);
+    return new ResponseMaquinaDto(maquina);
+  }
+
+  @Post()
+  async copy(@Body() dto: CreateMaquinaDto) {
+    const maquina = await this.maquinaService.copy(dto);
     return new ResponseMaquinaDto(maquina);
   }
 

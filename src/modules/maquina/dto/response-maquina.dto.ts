@@ -1,5 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { MaquinaEntity } from '../entities/maquina.entity';
+import { MaquinaEntity } from './../entities/maquina.entity';
 
 export class ResponseMaquinaDto {
     @ApiProperty()

@@ -4,7 +4,7 @@ import { MaquinaController } from './controllers/maquina.controller';
 import { MaquinaService } from './services/maquina.service';
 import { MaquinaEntity } from './entities/maquina.entity';
 import { ProyectoEntity } from 'src/modules/proyecto/entities/proyecto.entity';
-import { CuentaModule } from '../cuenta/cuenta.module';
+import { CuentaModule } from './../cuenta/cuenta.module';
 
 @Module({
     imports: [
