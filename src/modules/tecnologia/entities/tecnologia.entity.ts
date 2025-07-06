@@ -16,7 +16,4 @@ export class TecnologiaEntity extends BaseEntity {
 
   @Column({ default: false })
   isDeleted: boolean;
-
-  @ManyToMany(() => MaquinaEntity, maquina => maquina.tecnologias)
-  maquinas: MaquinaEntity[];
 }
