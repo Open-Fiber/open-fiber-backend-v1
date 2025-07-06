@@ -1,7 +1,7 @@
 // src/modules/recurso-clase/entities/recurso-clase.entity.ts
 import { Entity, Column, ManyToOne } from 'typeorm';
-import { BaseEntity } from 'src/common/entities/base.entity';
-import { ClaseEntity } from 'src/modules/clase/entities/clase.entity'; // Asegúrate de importar ClaseEntity
+import { BaseEntity } from './../../../common/entities/base.entity';
+import { ClaseEntity } from './../../../modules/clase/entities/clase.entity'; // Asegúrate de importar ClaseEntity
 
 @Entity('recursos_clase')
 export class RecursoClaseEntity extends BaseEntity {
