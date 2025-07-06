@@ -1,6 +1,6 @@
 import { PartialType } from '@nestjs/mapped-types';
-import { CreateContribuyenteDto } from './create-contribuyente.dto';
 import { ApiPropertyOptional } from '@nestjs/swagger';
+import { CreateContribuyenteDto } from './create-contribuyente.dto';
 
 export class UpdateContribuyenteDto extends PartialType(CreateContribuyenteDto) {
   @ApiPropertyOptional()

@@ -1,5 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { ContribuyenteEntity } from '../entities/contribuyente.entity';
+import { ContribuyenteEntity } from './../entities/contribuyente.entity';
 
 export class ResponseContribuyenteDto {
   @ApiProperty()

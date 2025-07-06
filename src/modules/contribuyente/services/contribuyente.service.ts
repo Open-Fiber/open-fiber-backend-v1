@@ -1,10 +1,10 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { ContribuyenteEntity } from '../entities/contribuyente.entity';
-import { CreateContribuyenteDto } from '../dto/create-contribuyente.dto';
-import { UpdateContribuyenteDto } from '../dto/update-contribuyente.dto';
-import { MaquinaEntity } from 'src/modules/maquina/entities/maquina.entity';
+import { ContribuyenteEntity } from './../entities/contribuyente.entity';
+import { CreateContribuyenteDto } from './../dto/create-contribuyente.dto';
+import { UpdateContribuyenteDto } from './../dto/update-contribuyente.dto';
+import { MaquinaEntity } from './../../../modules/maquina/entities/maquina.entity';
 
 @Injectable()
 export class ContribuyenteService {

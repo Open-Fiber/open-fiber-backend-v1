@@ -2,11 +2,11 @@ import {
   Controller, Post, Body, Get, Param, Put, Delete, UseGuards
 } from '@nestjs/common';
 import { ApiBearerAuth, ApiTags, ApiOperation, ApiResponse } from '@nestjs/swagger';
-import { ContribuyenteService } from '../services/contribuyente.service';
-import { CreateContribuyenteDto } from '../dto/create-contribuyente.dto';
-import { UpdateContribuyenteDto } from '../dto/update-contribuyente.dto';
-import { ResponseContribuyenteDto } from '../dto/response-contribuyente.dto';
-import { AuthGuard, PermisoGuard } from 'src/auth/guards';
+import { ContribuyenteService } from './../services/contribuyente.service';
+import { CreateContribuyenteDto } from './../dto/create-contribuyente.dto';
+import { UpdateContribuyenteDto } from './../dto/update-contribuyente.dto';
+import { ResponseContribuyenteDto } from './../dto/response-contribuyente.dto';
+import { AuthGuard, PermisoGuard } from './../../../auth/guards';
 
 @ApiBearerAuth()
 @ApiTags('Contribuyentes')
