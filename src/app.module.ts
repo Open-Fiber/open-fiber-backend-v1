@@ -5,7 +5,7 @@ import { DataSourceConfig } from './config/data.source';
 import { AuthModule } from './auth/auth.module';
 import { CommonModule } from './common/common.module';
 import { UsuarioModule } from './modules/usuario/usuario.module';
-import { OrganizacionModule } from './modules/organizacion/organization.module';
+import { OrganizacionModule } from './modules/organizacion/organizacion.module';
 import { ProyectoModule } from './modules/proyecto/proyecto.module';
 import { MaquinaModule } from './modules/maquina/maquina.module';
 import { ContribuyenteModule } from './modules/contribuyente/contribuyente.module';
@@ -19,6 +19,7 @@ import { ClaseModule } from './modules/clase/clase.module';
 import { ComentarioModule } from './modules/comentario/comentario.module';
 import { RecursoClaseModule } from './modules/recurso_clase/recurso-clase.module';
 import { RedSocialModule } from './modules/red_social/red_social.module';
+import { MiembroModule } from './modules/miembro/miembro.module';
 
 @Module({
   imports: [
@@ -40,7 +41,8 @@ import { RedSocialModule } from './modules/red_social/red_social.module';
     ClaseModule,
     RecursoClaseModule,
     ComentarioModule,
-    RedSocialModule
+    RedSocialModule,
+    MiembroModule
   ],
 })
 export class AppModule {}
