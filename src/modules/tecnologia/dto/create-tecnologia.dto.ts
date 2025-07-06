@@ -14,14 +14,4 @@ export class CreateTecnologiaDto {
   @ApiProperty({ example: 'Lenguaje de programación versátil para IA y automatización.' })
   @IsString()
   descripcion: string;
-
-  @ApiProperty({
-    example: ['uuid-de-la-maquina-a', 'uuid-de-la-maquina-b'],
-    description: 'IDs de las máquinas a las que se asocia esta tecnología',
-    type: [String],
-  })
-  @IsArray()
-  @ArrayMinSize(1)
-  @IsUUID('4', { each: true })
-  maquinaIds: string[];
 }

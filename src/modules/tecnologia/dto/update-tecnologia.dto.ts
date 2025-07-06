@@ -13,14 +13,4 @@ export class UpdateTecnologiaDto extends PartialType(CreateTecnologiaDto) {
 
   @ApiPropertyOptional()
   descripcion?: string;
-
-  @ApiPropertyOptional({
-    example: ['uuid-de-la-maquina-c'],
-    description: 'IDs de las máquinas a las que se asocia/desasocia esta tecnología. Se reemplazarán las asociaciones existentes.',
-    type: [String],
-  })
-  @IsOptional()
-  @IsArray()
-  @IsUUID('4', { each: true })
-  maquinaIds?: string[];
 }

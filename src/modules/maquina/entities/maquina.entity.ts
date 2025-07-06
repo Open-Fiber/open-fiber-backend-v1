@@ -7,7 +7,6 @@ import { ContextoDeAplicacionEntity } from 'src/modules/contexto_de_aplicacion/e
 import { CasoDeUsoEntity } from 'src/modules/caso_de_uso/entities/caso-de-uso.entity';
 import { PasoConstruccionEntity } from 'src/modules/paso_construccion/entities/paso-construccion.entity';
 import { RecursoEntity } from 'src/modules/recurso/entities/recurso.entity';
-import { TecnologiaEntity } from 'src/modules/tecnologia/entities/tecnologia.entity';
 import { LikeEntity } from 'src/modules/like/entities/like.entity';
 
 @Entity('maquinas')
@@ -63,20 +62,4 @@ export class MaquinaEntity extends BaseEntity {
 
   @ManyToOne(() => LikeEntity, like => like.maquina)
   likes: LikeEntity[];
-  
-  @ManyToMany(() => RecursoEntity, recurso => recurso.maquinas, { eager: true })
-  @JoinTable({
-    name: 'maquina_recurso', // Nombre de la tabla intermedia
-    joinColumn: { name: 'maquina_id', referencedColumnName: 'id' },
-    inverseJoinColumn: { name: 'recurso_id', referencedColumnName: 'id' },
-  })
-  recursos: RecursoEntity[];
-
-  @ManyToMany(() => TecnologiaEntity, tecnologia => tecnologia.maquinas, { eager: true })
-  @JoinTable({
-    name: 'maquina_tecnologia', // Nombre de la tabla intermedia
-    joinColumn: { name: 'maquina_id', referencedColumnName: 'id' },
-    inverseJoinColumn: { name: 'tecnologia_id', referencedColumnName: 'id' },
-  })
-  tecnologias: TecnologiaEntity[];
 }

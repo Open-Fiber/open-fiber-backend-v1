@@ -15,14 +15,10 @@ export class ResponseTecnologiaDto {
   @ApiProperty()
   descripcion: string;
 
-  @ApiProperty({ type: [String], description: 'IDs de las máquinas asociadas' })
-  maquinaIds: string[];
-
   constructor(t: TecnologiaEntity) {
     this.id = t.id;
     this.nombre = t.nombre;
     this.tipo = t.tipo;
     this.descripcion = t.descripcion;
-    this.maquinaIds = t.maquinas ? t.maquinas.map(m => m.id) : [];
   }
 }

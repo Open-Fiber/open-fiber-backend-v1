@@ -12,13 +12,9 @@ export class ResponseRecursoDto {
   @ApiProperty()
   descripcion: string;
 
-  @ApiProperty({ type: [String], description: 'IDs de las máquinas asociadas' })
-  maquinaIds: string[];
-
   constructor(r: RecursoEntity) {
     this.id = r.id;
     this.nombre = r.nombre;
     this.descripcion = r.descripcion;
-    this.maquinaIds = r.maquinas ? r.maquinas.map(m => m.id) : [];
   }
 }

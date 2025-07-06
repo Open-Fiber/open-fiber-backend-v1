@@ -11,13 +11,4 @@ export class UpdateRecursoDto extends PartialType(CreateRecursoDto) {
   @ApiPropertyOptional()
   descripcion?: string;
 
-  @ApiPropertyOptional({
-    example: ['uuid-de-la-maquina-3'],
-    description: 'IDs de las máquinas a las que se asocia/desasocia este recurso. Se reemplazarán las asociaciones existentes.',
-    type: [String],
-  })
-  @IsOptional()
-  @IsArray()
-  @IsUUID('4', { each: true })
-  maquinaIds?: string[];
 }

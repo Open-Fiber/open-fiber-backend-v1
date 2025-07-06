@@ -17,12 +17,7 @@ export class RecursoService {
   ) {}
 
   async create(dto: CreateRecursoDto): Promise<RecursoEntity> {
-    const maquinas = await this.maquinaRepo.findBy({ id: In(dto.maquinaIds) });
-    if (maquinas.length !== dto.maquinaIds.length) {
-      throw new NotFoundException('Algunas máquinas no fueron encontradas.');
-    }
-
-    const recurso = this.recursoRepo.create({ ...dto, maquinas });
+    const recurso = this.recursoRepo.create({ ...dto });
     return this.recursoRepo.save(recurso);
   }
 
@@ -41,15 +36,6 @@ export class RecursoService {
     
     // Actualizar propiedades básicas
     Object.assign(recurso, dto);
-
-    // Actualizar relaciones ManyToMany
-    if (dto.maquinaIds) {
-      const maquinas = await this.maquinaRepo.findBy({ id: In(dto.maquinaIds) });
-      if (maquinas.length !== dto.maquinaIds.length) {
-        throw new NotFoundException('Algunas máquinas para actualizar no fueron encontradas.');
-      }
-      recurso.maquinas = maquinas;
-    }
 
     return this.recursoRepo.save(recurso);
   }

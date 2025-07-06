@@ -17,12 +17,7 @@ export class TecnologiaService {
   ) {}
 
   async create(dto: CreateTecnologiaDto): Promise<TecnologiaEntity> {
-    const maquinas = await this.maquinaRepo.findBy({ id: In(dto.maquinaIds) });
-    if (maquinas.length !== dto.maquinaIds.length) {
-      throw new NotFoundException('Algunas máquinas no fueron encontradas.');
-    }
-
-    const tecnologia = this.tecnologiaRepo.create({ ...dto, maquinas });
+    const tecnologia = this.tecnologiaRepo.create({ ...dto });
     return this.tecnologiaRepo.save(tecnologia);
   }
 
@@ -41,15 +36,6 @@ export class TecnologiaService {
 
     // Actualizar propiedades básicas
     Object.assign(tecnologia, dto);
-
-    // Actualizar relaciones ManyToMany
-    if (dto.maquinaIds) {
-      const maquinas = await this.maquinaRepo.findBy({ id: In(dto.maquinaIds) });
-      if (maquinas.length !== dto.maquinaIds.length) {
-        throw new NotFoundException('Algunas máquinas para actualizar no fueron encontradas.');
-      }
-      tecnologia.maquinas = maquinas;
-    }
 
     return this.tecnologiaRepo.save(tecnologia);
   }

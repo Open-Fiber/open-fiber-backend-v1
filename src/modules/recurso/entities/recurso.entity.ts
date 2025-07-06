@@ -13,7 +13,4 @@ export class RecursoEntity extends BaseEntity {
 
   @Column({ default: false })
   isDeleted: boolean;
-
-  @ManyToMany(() => MaquinaEntity, maquina => maquina.recursos)
-  maquinas: MaquinaEntity[];
 }
