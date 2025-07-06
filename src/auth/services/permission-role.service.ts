@@ -2,8 +2,8 @@ import { Injectable, Logger, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 
-import { handlerError } from '../../common/utils/handlerError.utils';
-import { CreatePermisoRolDto } from '../dto';
+import { handlerError } from './../../common/utils/handlerError.utils';
+import { CreatePermisoRolDto } from './../dto';
 import { PermisoRolEntity } from './../entities/permiso-rol.entity';
 import { PermisoService } from './permiso.service';
 

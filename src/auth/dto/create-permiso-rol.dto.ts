@@ -1,6 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { IsNotEmpty, IsString, IsUUID, MaxLength, MinLength, } from 'class-validator';
-// import { UniqueRole } from '../../common/validations/unique.validation';
 
 export class CreatePermisoRolDto {
     @ApiProperty({

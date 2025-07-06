@@ -2,9 +2,9 @@ import { CanActivate, ExecutionContext, Injectable, InternalServerErrorException
 import { Reflector } from '@nestjs/core';
 import { Request } from 'express';
 
-import { CuentaService } from '../../modules/cuenta/services/cuenta.service';
-import { authToken } from '../../common/utils/auth.token';
-import { IAuthToken } from '../interfaces/authToken.interface';
+import { CuentaService } from './../../modules/cuenta/services/cuenta.service';
+import { authToken } from './../../common/utils/auth.token';
+import { IAuthToken } from './../interfaces/authToken.interface';
 
 @Injectable()
 export class AuthGuard implements CanActivate {

@@ -1,6 +1,6 @@
 import { registerDecorator, ValidationOptions, ValidatorConstraint, ValidatorConstraintInterface, ValidationArguments } from 'class-validator';
 import { Injectable } from '@nestjs/common';
-import { PermisoService } from '../services/permiso.service';
+import { PermisoService } from './../services/permiso.service';
 
 @ValidatorConstraint({ name: "UniquePermission", async: true })
 @Injectable()

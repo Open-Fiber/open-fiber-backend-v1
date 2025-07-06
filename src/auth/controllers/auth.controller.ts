@@ -3,9 +3,7 @@ import { ApiOperation, ApiQuery, ApiResponse, ApiTags } from '@nestjs/swagger/di
 
 import { AuthDTO } from './../dto/auth.dto';
 import { AuthService } from './../services/auth.service';
-// import { CreateCuentaDto } from '../../cuenta/dto';
-import { ResponseMessage } from '../../common/interfaces/responseMessage.interface';
-// import { UserService } from '../../user/services/user.service';
+import { ResponseMessage } from './../../common/interfaces/responseMessage.interface';
 
 @ApiTags('Auth')
 @Controller('auth')

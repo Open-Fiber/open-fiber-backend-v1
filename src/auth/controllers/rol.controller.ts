@@ -1,13 +1,13 @@
 import { Body, Controller, Delete, Get, Param, Patch, Post, Query, UseGuards, ParseUUIDPipe } from '@nestjs/common';
 import { ApiBearerAuth, ApiParam, ApiQuery, ApiTags } from '@nestjs/swagger';
 
-import { AuthGuard, PermisoGuard } from '../guards';
-import { QueryDto } from '../../common/dto/query.dto';
-import { ORDER_ENUM } from '../../common/constants';
-import { RolService } from '../services/rol.service';
+import { AuthGuard, PermisoGuard } from './../guards';
+import { QueryDto } from './../../common/dto/query.dto';
+import { ORDER_ENUM } from './../../common/constants';
+import { RolService } from './../services/rol.service';
 import { CreateRolDTO, UpdateRolDTO } from '../dto';
-import { PermisoAccess } from '../decorators/permiso.decorator';
-import { PERMISOS } from '../constants/permisos.constant';
+import { PermisoAccess } from './../decorators/permiso.decorator';
+import { PERMISOS } from './../constants/permisos.constant';
 
 @ApiTags('Rol')
 @ApiBearerAuth()

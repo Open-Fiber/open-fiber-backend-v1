@@ -2,12 +2,12 @@ import { CanActivate, ExecutionContext, Injectable, InternalServerErrorException
 import { Reflector } from '@nestjs/core';
 import { Request } from 'express';
 
-import { PERMISOS } from '../constants/permisos.constant';
-import { PERMISOS_KEY } from '../decorators/permiso.decorator';
-import { PermisoRolService } from '../services/permission-role.service';
-import { IAuthToken } from '../interfaces/authToken.interface';
-import { authToken } from '../../common/utils/auth.token';
-import { RolService } from '../services/rol.service';
+import { PERMISOS } from './../constants/permisos.constant';
+import { PERMISOS_KEY } from './../decorators/permiso.decorator';
+import { PermisoRolService } from './../services/permission-role.service';
+import { IAuthToken } from './../interfaces/authToken.interface';
+import { authToken } from './../../common/utils/auth.token';
+import { RolService } from './../services/rol.service';
 
 @Injectable()
 export class PermisoGuard implements CanActivate {

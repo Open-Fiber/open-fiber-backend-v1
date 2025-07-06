@@ -1,6 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { IsArray, IsNotEmpty, IsOptional, IsString, IsUUID, MaxLength, MinLength, } from 'class-validator';
-import { UniqueRole } from '../validations';
+import { UniqueRole } from './../validations';
 
 export class UpdateRolDTO {
 

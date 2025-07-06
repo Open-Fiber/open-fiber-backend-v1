@@ -1,6 +1,6 @@
 import { Injectable } from "@nestjs/common";
 import { ITokenStrategy } from "./token-strategy.service";
-import { IAuthToken } from "../interfaces/authToken.interface";
+import { IAuthToken } from "./../interfaces/authToken.interface";
 
 @Injectable()
 export class TokenValidatorService {

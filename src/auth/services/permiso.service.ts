@@ -1,11 +1,11 @@
 import { Injectable, Logger, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { QueryDto } from '../../common/dto/query.dto';
-import { handlerError } from '../../common/utils/handlerError.utils';
-import { CreatePermisoDTO, UpdatePermisoDTO } from '../dto';
-import { ORDER_ENUM } from '../../common/constants';
-import { PermisoEntity } from '../entities/permiso.entity';
+import { QueryDto } from './../../common/dto/query.dto';
+import { handlerError } from './../../common/utils/handlerError.utils';
+import { CreatePermisoDTO, UpdatePermisoDTO } from './../dto';
+import { ORDER_ENUM } from './../../common/constants';
+import { PermisoEntity } from './../entities/permiso.entity';
 
 @Injectable()
 export class PermisoService {

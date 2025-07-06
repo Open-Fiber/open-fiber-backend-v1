@@ -1,6 +1,6 @@
 import { registerDecorator, ValidationOptions, ValidatorConstraint, ValidatorConstraintInterface, ValidationArguments } from 'class-validator';
 import { Injectable } from '@nestjs/common';
-import { RolService } from '../services/rol.service';
+import { RolService } from './../services/rol.service';
 
 @ValidatorConstraint({ async: true })
 @Injectable()

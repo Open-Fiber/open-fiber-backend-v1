@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
-import { ITokenStrategy } from '../token-strategy.service';
-import { authToken } from '../../../common/utils/auth.token';
-import { IAuthToken } from '../../interfaces/authToken.interface';
+import { ITokenStrategy } from './../token-strategy.service';
+import { authToken } from './../../../common/utils/auth.token';
+import { IAuthToken } from './../../interfaces/authToken.interface';
 
 @Injectable()
 export class JwtStrategy implements ITokenStrategy {

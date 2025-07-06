@@ -2,8 +2,8 @@ import { Global, Module } from '@nestjs/common';
 
 import { AuthService } from './services/auth.service';
 import { AuthController } from './controllers/auth.controller';
-import { CuentaService } from '../modules/cuenta/services/cuenta.service';
-import { CuentaModule } from '../modules/cuenta/cuenta.module';
+import { CuentaService } from './../modules/cuenta/services/cuenta.service';
+import { CuentaModule } from './../modules/cuenta/cuenta.module';
 import { ConfigModule } from '@nestjs/config';
 import { JwtStrategy } from './services/implementacion/jwt.strategy.service';
 import { TokenValidatorService } from './services/token-validator.service';
@@ -19,7 +19,7 @@ import { RolEntity } from './entities/rol.entity';
 import { UniquePermissionConstraint, UniqueRoleConstraint } from './validations';
 import { PermisoRolEntity } from './entities/permiso-rol.entity';
 import { PermisoRolService } from './services/permission-role.service';
-import { UsuarioModule } from 'src/modules/usuario/usuario.module';
+import { UsuarioModule } from './../modules/usuario/usuario.module';
 
 @Global()
 @Module({

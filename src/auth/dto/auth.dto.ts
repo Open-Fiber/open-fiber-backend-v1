@@ -1,6 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { IsString, IsNotEmpty, IsEmail } from 'class-validator';
-import { IAuth } from '../interfaces/auth.interface';
+import { IAuth } from './../interfaces/auth.interface';
 
 export class AuthDTO implements IAuth {
   @ApiProperty({

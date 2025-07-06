@@ -1,7 +1,7 @@
-import { BaseEntity } from "../../common/entities/base.entity";
+import { BaseEntity } from "./../../common/entities/base.entity";
 import { Column, Entity, JoinTable, ManyToMany, OneToMany } from "typeorm";
 import { PermisoRolEntity } from "./permiso-rol.entity";
-import { UsuarioEntity } from "src/modules/usuario/entities/usuario.entity";
+import { UsuarioEntity } from "./../../modules/usuario/entities/usuario.entity";
 
 @Entity({ name: 'rol' })
 export class RolEntity extends BaseEntity {

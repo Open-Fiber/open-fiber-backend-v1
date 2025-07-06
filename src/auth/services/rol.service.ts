@@ -2,13 +2,13 @@ import { ConflictException, Injectable, InternalServerErrorException, Logger, No
 import { InjectRepository } from '@nestjs/typeorm';
 import { DataSource, Repository } from 'typeorm';
 
-import { QueryDto } from '../../common/dto/query.dto';
-import { handlerError } from '../../common/utils/handlerError.utils';
-import { RolEntity } from '../entities/rol.entity';
-import { ORDER_ENUM } from 'src/common/constants';
-import { PermisoEntity } from '../entities/permiso.entity';
-import { CreateRolDTO, UpdateRolDTO } from '../dto';
-import { PermisoRolEntity } from '../entities/permiso-rol.entity';
+import { QueryDto } from './../../common/dto/query.dto';
+import { handlerError } from './../../common/utils/handlerError.utils';
+import { RolEntity } from './../entities/rol.entity';
+import { ORDER_ENUM } from './../../common/constants';
+import { PermisoEntity } from './../entities/permiso.entity';
+import { CreateRolDTO, UpdateRolDTO } from './../dto';
+import { PermisoRolEntity } from './../entities/permiso-rol.entity';
 
 @Injectable()
 export class RolService {
