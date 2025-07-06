@@ -1,6 +1,6 @@
 // src/modules/tecnologia/dto/response-tecnologia.dto.ts
 import { ApiProperty } from '@nestjs/swagger';
-import { TecnologiaEntity } from '../entities/tecnologia.entity';
+import { TecnologiaEntity } from './../entities/tecnologia.entity';
 
 export class ResponseTecnologiaDto {
   @ApiProperty()

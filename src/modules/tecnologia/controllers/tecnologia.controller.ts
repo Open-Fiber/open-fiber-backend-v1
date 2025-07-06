@@ -3,11 +3,11 @@ import {
   Controller, Post, Body, Get, Param, Put, Delete, UseGuards
 } from '@nestjs/common';
 import { ApiBearerAuth, ApiTags, ApiOperation, ApiResponse } from '@nestjs/swagger';
-import { TecnologiaService } from '../services/tecnologia.service';
-import { CreateTecnologiaDto } from '../dto/create-tecnologia.dto';
-import { UpdateTecnologiaDto } from '../dto/update-tecnologia.dto';
-import { ResponseTecnologiaDto } from '../dto/response-tecnologia.dto';
-import { AuthGuard, PermisoGuard } from 'src/auth/guards';
+import { TecnologiaService } from './../services/tecnologia.service';
+import { CreateTecnologiaDto } from './../dto/create-tecnologia.dto';
+import { UpdateTecnologiaDto } from './../dto/update-tecnologia.dto';
+import { ResponseTecnologiaDto } from './../dto/response-tecnologia.dto';
+import { AuthGuard, PermisoGuard } from './../../../auth/guards';
 
 @ApiBearerAuth()
 @ApiTags('Tecnologías')
