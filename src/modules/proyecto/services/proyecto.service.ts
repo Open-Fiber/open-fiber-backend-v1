@@ -1,12 +1,12 @@
 import { Injectable, NotFoundException, UseGuards } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
+import { AuthGuard } from './../../../auth/guards/auth.guard';
+import { PermisoGuard } from './../../../auth/guards';
 import { CuentaEntity } from './../../../modules/cuenta/entities/cuenta.entity';
 import { CreateProyectoDto } from './../dto/create-proyecto.dto';
 import { UpdateProyectoDto } from './../dto/update-proyecto.dto';
 import { ProyectoEntity } from './../entities/proyecto.entity';
-import { AuthGuard } from '../../../auth/guards/auth.guard';
-import { PermisoGuard } from 'src/auth/guards';
 
 @Injectable()
 @UseGuards(AuthGuard, PermisoGuard)

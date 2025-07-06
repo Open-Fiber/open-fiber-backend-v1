@@ -1,7 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { IsEmail, IsEnum, IsNotEmpty, IsOptional, IsString, IsUUID } from 'class-validator';
 import { ProyectoEntity } from './../entities/proyecto.entity';
-import { CuentaEntity } from './../../../modules/cuenta/entities/cuenta.entity';
 
 export class ResponseProyectoDTO {
     @ApiProperty({

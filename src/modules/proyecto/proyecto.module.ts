@@ -3,7 +3,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { ProyectoService } from './services/proyecto.service';
 import { ProyectoController } from './controller/proyecto.controller';
 import { ProyectoEntity } from './entities/proyecto.entity';
-import { CuentaModule } from '../cuenta/cuenta.module';
+import { CuentaModule } from './../cuenta/cuenta.module';
 import { AuthModule } from './../../auth/auth.module';
 
 @Module({
