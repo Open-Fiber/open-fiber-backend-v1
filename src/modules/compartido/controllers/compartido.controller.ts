@@ -3,11 +3,11 @@ import {
   Controller, Post, Body, Get, Param, Put, Delete, UseGuards
 } from '@nestjs/common';
 import { ApiBearerAuth, ApiTags, ApiOperation, ApiResponse } from '@nestjs/swagger';
-import { CompartidoService } from '../services/compartido.service';
-import { CreateCompartidoDto } from '../dto/create-compartido.dto';
-import { UpdateCompartidoDto } from '../dto/update-compartido.dto';
-import { ResponseCompartidoDto } from '../dto/response-compartido.dto';
-import { AuthGuard, PermisoGuard } from 'src/auth/guards';
+import { CompartidoService } from './../services/compartido.service';
+import { CreateCompartidoDto } from './../dto/create-compartido.dto';
+import { UpdateCompartidoDto } from './../dto/update-compartido.dto';
+import { ResponseCompartidoDto } from './../dto/response-compartido.dto';
+import { AuthGuard, PermisoGuard } from './../../../auth/guards';
 
 @ApiBearerAuth()
 @ApiTags('Máquinas compartidas')

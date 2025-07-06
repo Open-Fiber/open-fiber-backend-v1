@@ -1,8 +1,8 @@
 // src/modules/compartido/entities/compartido.entity.ts
 import { Entity, Column, ManyToOne } from 'typeorm';
-import { BaseEntity } from 'src/common/entities/base.entity';
-import { OrganizacionEntity } from 'src/modules/organizacion/entities/organizacion.entity'; // Importa OrganizacionEntity
-import { MaquinaEntity } from 'src/modules/maquina/entities/maquina.entity'; // Importa MaquinaEntity
+import { BaseEntity } from './../../../common/entities/base.entity';
+import { OrganizacionEntity } from './../../../modules/organizacion/entities/organizacion.entity'; // Importa OrganizacionEntity
+import { MaquinaEntity } from './../../../modules/maquina/entities/maquina.entity'; // Importa MaquinaEntity
 
 @Entity('compartidos')
 export class CompartidoEntity extends BaseEntity {

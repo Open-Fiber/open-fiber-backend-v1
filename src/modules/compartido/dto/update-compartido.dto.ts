@@ -1,8 +1,8 @@
 // src/modules/compartido/dto/update-compartido.dto.ts
 import { PartialType } from '@nestjs/mapped-types';
-import { CreateCompartidoDto } from './create-compartido.dto';
 import { ApiPropertyOptional } from '@nestjs/swagger';
 import { IsString, IsUUID, Length, IsOptional } from 'class-validator';
+import { CreateCompartidoDto } from './create-compartido.dto';
 
 export class UpdateCompartidoDto extends PartialType(CreateCompartidoDto) {
   @ApiPropertyOptional()

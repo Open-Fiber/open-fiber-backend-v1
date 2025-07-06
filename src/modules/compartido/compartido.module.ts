@@ -2,11 +2,11 @@
 import { forwardRef, Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { CompartidoEntity } from './entities/compartido.entity';
-import { OrganizacionEntity } from '../organizacion/entities/organizacion.entity';
-import { MaquinaEntity } from '../maquina/entities/maquina.entity';
+import { OrganizacionEntity } from './../organizacion/entities/organizacion.entity';
+import { MaquinaEntity } from './../maquina/entities/maquina.entity';
 import { CompartidoService } from './services/compartido.service';
 import { CompartidoController } from './controllers/compartido.controller';
-import { CuentaModule } from '../cuenta/cuenta.module';
+import { CuentaModule } from './../cuenta/cuenta.module';
 
 @Module({
     imports: [

@@ -2,11 +2,11 @@
 import { Injectable, NotFoundException, ConflictException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { CompartidoEntity } from '../entities/compartido.entity';
-import { CreateCompartidoDto } from '../dto/create-compartido.dto';
-import { UpdateCompartidoDto } from '../dto/update-compartido.dto';
-import { OrganizacionEntity } from 'src/modules/organizacion/entities/organizacion.entity';
-import { MaquinaEntity } from 'src/modules/maquina/entities/maquina.entity';
+import { CompartidoEntity } from './../entities/compartido.entity';
+import { CreateCompartidoDto } from './../dto/create-compartido.dto';
+import { UpdateCompartidoDto } from './../dto/update-compartido.dto';
+import { OrganizacionEntity } from './../../../modules/organizacion/entities/organizacion.entity';
+import { MaquinaEntity } from './../../../modules/maquina/entities/maquina.entity';
 
 @Injectable()
 export class CompartidoService {

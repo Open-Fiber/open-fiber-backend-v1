@@ -1,6 +1,6 @@
 // src/modules/compartido/dto/response-compartido.dto.ts
 import { ApiProperty } from '@nestjs/swagger';
-import { CompartidoEntity } from '../entities/compartido.entity';
+import { CompartidoEntity } from './../entities/compartido.entity';
 
 export class ResponseCompartidoDto {
   @ApiProperty()
