@@ -1,6 +1,6 @@
 // src/modules/paso-construccion/dto/response-paso-construccion.dto.ts
 import { ApiProperty } from '@nestjs/swagger';
-import { PasoConstruccionEntity } from '../entities/paso-construccion.entity';
+import { PasoConstruccionEntity } from './../entities/paso-construccion.entity';
 
 export class ResponsePasoConstruccionDto {
   @ApiProperty()

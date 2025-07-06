@@ -3,11 +3,11 @@ import {
   Controller, Post, Body, Get, Param, Put, Delete, UseGuards
 } from '@nestjs/common';
 import { ApiBearerAuth, ApiTags, ApiOperation, ApiResponse } from '@nestjs/swagger';
-import { PasoConstruccionService } from '../services/paso-construccion.service';
-import { CreatePasoConstruccionDto } from '../dto/create-paso-construccion.dto';
-import { UpdatePasoConstruccionDto } from '../dto/update-paso-construccion.dto';
-import { ResponsePasoConstruccionDto } from '../dto/response-paso-construccion.dto';
-import { AuthGuard, PermisoGuard } from 'src/auth/guards';
+import { PasoConstruccionService } from './../services/paso-construccion.service';
+import { CreatePasoConstruccionDto } from './../dto/create-paso-construccion.dto';
+import { UpdatePasoConstruccionDto } from './../dto/update-paso-construccion.dto';
+import { ResponsePasoConstruccionDto } from './../dto/response-paso-construccion.dto';
+import { AuthGuard, PermisoGuard } from './../../../auth/guards';
 
 @ApiBearerAuth()
 @ApiTags('Pasos de Construcción')

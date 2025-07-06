@@ -2,10 +2,10 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { PasoConstruccionEntity } from '../entities/paso-construccion.entity';
-import { CreatePasoConstruccionDto } from '../dto/create-paso-construccion.dto';
-import { UpdatePasoConstruccionDto } from '../dto/update-paso-construccion.dto';
-import { MaquinaEntity } from 'src/modules/maquina/entities/maquina.entity';
+import { PasoConstruccionEntity } from './../entities/paso-construccion.entity';
+import { CreatePasoConstruccionDto } from './../dto/create-paso-construccion.dto';
+import { UpdatePasoConstruccionDto } from './../dto/update-paso-construccion.dto';
+import { MaquinaEntity } from './../../../modules/maquina/entities/maquina.entity';
 
 @Injectable()
 export class PasoConstruccionService {
