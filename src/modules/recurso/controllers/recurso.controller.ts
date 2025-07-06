@@ -3,11 +3,11 @@ import {
   Controller, Post, Body, Get, Param, Put, Delete, UseGuards
 } from '@nestjs/common';
 import { ApiBearerAuth, ApiTags, ApiOperation, ApiResponse } from '@nestjs/swagger';
-import { RecursoService } from '../services/recurso.service';
-import { CreateRecursoDto } from '../dto/create-recurso.dto';
-import { UpdateRecursoDto } from '../dto/update-recurso.dto';
-import { ResponseRecursoDto } from '../dto/response-recurso.dto';
-import { AuthGuard, PermisoGuard } from 'src/auth/guards';
+import { AuthGuard, PermisoGuard } from './../../../auth/guards';
+import { RecursoService } from './../services/recurso.service';
+import { CreateRecursoDto } from './../dto/create-recurso.dto';
+import { UpdateRecursoDto } from './../dto/update-recurso.dto';
+import { ResponseRecursoDto } from './../dto/response-recurso.dto';
 
 @ApiBearerAuth()
 @ApiTags('Recursos')

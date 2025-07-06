@@ -1,6 +1,6 @@
 // src/modules/recurso/dto/response-recurso.dto.ts
 import { ApiProperty } from '@nestjs/swagger';
-import { RecursoEntity } from '../entities/recurso.entity';
+import { RecursoEntity } from './../entities/recurso.entity';
 
 export class ResponseRecursoDto {
   @ApiProperty()

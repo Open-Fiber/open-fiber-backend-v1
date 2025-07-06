@@ -1,5 +1,5 @@
 // src/modules/recurso/dto/create-recurso.dto.ts
-import { IsString, IsArray, IsUUID, ArrayMinSize, IsOptional } from 'class-validator';
+import { IsString } from 'class-validator';
 import { ApiProperty } from '@nestjs/swagger';
 
 export class CreateRecursoDto {

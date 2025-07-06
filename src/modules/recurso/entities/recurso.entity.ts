@@ -1,8 +1,6 @@
 // src/modules/recurso/entities/recurso.entity.ts
-import { Entity, Column, ManyToMany } from 'typeorm';
-import { BaseEntity } from 'src/common/entities/base.entity';
-import { MaquinaEntity } from 'src/modules/maquina/entities/maquina.entity';
-
+import { Entity, Column } from 'typeorm';
+import { BaseEntity } from './../../../common/entities/base.entity';
 @Entity('recursos')
 export class RecursoEntity extends BaseEntity {
   @Column()

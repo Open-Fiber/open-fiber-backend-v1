@@ -21,6 +21,7 @@ import { RecursoClaseModule } from './modules/recurso_clase/recurso-clase.module
 import { RedSocialModule } from './modules/red_social/red_social.module';
 import { MiembroModule } from './modules/miembro/miembro.module';
 import { CompartidoModule } from './modules/compartido/compartido.module';
+import { RecursoModule } from './modules/recurso/recurso.module';
 
 @Module({
   imports: [
@@ -37,6 +38,7 @@ import { CompartidoModule } from './modules/compartido/compartido.module';
     ContextoDeAplicacionModule,
     CasoDeUsoModule,
     TecnologiaModule,
+    RecursoModule,
     LikeModule,
     CursoModule,
     ClaseModule,
