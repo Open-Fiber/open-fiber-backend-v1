@@ -2,10 +2,10 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { CasoDeUsoEntity } from '../entities/caso-de-uso.entity';
-import { CreateCasoDeUsoDto } from '../dto/create-caso-de-uso.dto';
-import { UpdateCasoDeUsoDto } from '../dto/update-caso-de-uso.dto';
-import { MaquinaEntity } from 'src/modules/maquina/entities/maquina.entity';
+import { CasoDeUsoEntity } from './../entities/caso-de-uso.entity';
+import { CreateCasoDeUsoDto } from './../dto/create-caso-de-uso.dto';
+import { UpdateCasoDeUsoDto } from './../dto/update-caso-de-uso.dto';
+import { MaquinaEntity } from './../../../modules/maquina/entities/maquina.entity';
 
 @Injectable()
 export class CasoDeUsoService {

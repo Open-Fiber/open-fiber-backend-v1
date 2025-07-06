@@ -1,6 +1,6 @@
 // src/modules/caso-de-uso/dto/response-caso-de-uso.dto.ts
 import { ApiProperty } from '@nestjs/swagger';
-import { CasoDeUsoEntity } from '../entities/caso-de-uso.entity';
+import { CasoDeUsoEntity } from './../entities/caso-de-uso.entity';
 
 export class ResponseCasoDeUsoDto {
   @ApiProperty()

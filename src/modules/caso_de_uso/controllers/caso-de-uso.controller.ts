@@ -3,11 +3,11 @@ import {
   Controller, Post, Body, Get, Param, Put, Delete, UseGuards
 } from '@nestjs/common';
 import { ApiBearerAuth, ApiTags, ApiOperation, ApiResponse } from '@nestjs/swagger';
-import { CasoDeUsoService } from '../services/caso-de-uso.service';
-import { CreateCasoDeUsoDto } from '../dto/create-caso-de-uso.dto';
-import { UpdateCasoDeUsoDto } from '../dto/update-caso-de-uso.dto';
-import { ResponseCasoDeUsoDto } from '../dto/response-caso-de-uso.dto';
-import { AuthGuard, PermisoGuard } from 'src/auth/guards';
+import { AuthGuard, PermisoGuard } from './../../../auth/guards';
+import { CasoDeUsoService } from './../services/caso-de-uso.service';
+import { CreateCasoDeUsoDto } from './../dto/create-caso-de-uso.dto';
+import { UpdateCasoDeUsoDto } from './../dto/update-caso-de-uso.dto';
+import { ResponseCasoDeUsoDto } from './../dto/response-caso-de-uso.dto';
 
 @ApiBearerAuth()
 @ApiTags('Casos de Uso')
