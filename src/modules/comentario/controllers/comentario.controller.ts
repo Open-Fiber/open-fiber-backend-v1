@@ -3,11 +3,11 @@ import {
   Controller, Post, Body, Get, Param, Put, Delete, UseGuards
 } from '@nestjs/common';
 import { ApiBearerAuth, ApiTags, ApiOperation, ApiResponse } from '@nestjs/swagger';
-import { ComentarioService } from '../services/comentario.service';
-import { CreateComentarioDto } from '../dto/create-comentario.dto';
-import { UpdateComentarioDto } from '../dto/update-comentario.dto';
-import { ResponseComentarioDto } from '../dto/response-comentario.dto';
-import { AuthGuard, PermisoGuard } from 'src/auth/guards';
+import { AuthGuard, PermisoGuard } from './../../../auth/guards';
+import { ComentarioService } from './../services/comentario.service';
+import { CreateComentarioDto } from './../dto/create-comentario.dto';
+import { UpdateComentarioDto } from './../dto/update-comentario.dto';
+import { ResponseComentarioDto } from './../dto/response-comentario.dto';
 
 @ApiBearerAuth()
 @ApiTags('Comentarios')

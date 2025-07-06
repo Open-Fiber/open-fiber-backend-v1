@@ -1,6 +1,6 @@
 // src/modules/comentario/dto/response-comentario.dto.ts
 import { ApiProperty } from '@nestjs/swagger';
-import { ComentarioEntity } from '../entities/comentario.entity';
+import { ComentarioEntity } from './../entities/comentario.entity';
 
 export class ResponseComentarioDto {
   @ApiProperty()

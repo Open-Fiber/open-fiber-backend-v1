@@ -2,12 +2,12 @@
 import { forwardRef, Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ComentarioEntity } from './entities/comentario.entity';
-import { CuentaEntity } from '../cuenta/entities/cuenta.entity'; // ¡Asegúrate de importar CuentaEntity aquí!
-import { ClaseEntity } from '../clase/entities/clase.entity'; // ¡Asegúrate de importar ClaseEntity aquí!
+import { CuentaEntity } from './../cuenta/entities/cuenta.entity'; // ¡Asegúrate de importar CuentaEntity aquí!
+import { ClaseEntity } from './../clase/entities/clase.entity'; // ¡Asegúrate de importar ClaseEntity aquí!
 import { ComentarioService } from './services/comentario.service';
 import { ComentarioController } from './controllers/comentario.controller';
-import { CuentaModule } from '../cuenta/cuenta.module';
-import { ClaseModule } from '../clase/clase.module';
+import { CuentaModule } from './../cuenta/cuenta.module';
+import { ClaseModule } from './../clase/clase.module';
 
 @Module({
     imports: [

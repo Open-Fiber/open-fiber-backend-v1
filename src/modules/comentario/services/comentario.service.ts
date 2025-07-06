@@ -2,11 +2,11 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { ComentarioEntity } from '../entities/comentario.entity';
-import { CreateComentarioDto } from '../dto/create-comentario.dto';
-import { UpdateComentarioDto } from '../dto/update-comentario.dto';
-import { CuentaEntity } from 'src/modules/cuenta/entities/cuenta.entity'; // Importa CuentaEntity
-import { ClaseEntity } from 'src/modules/clase/entities/clase.entity'; // Importa ClaseEntity
+import { ComentarioEntity } from './../entities/comentario.entity';
+import { CreateComentarioDto } from './../dto/create-comentario.dto';
+import { UpdateComentarioDto } from './../dto/update-comentario.dto';
+import { CuentaEntity } from './../../../modules/cuenta/entities/cuenta.entity'; // Importa CuentaEntity
+import { ClaseEntity } from './../../../modules/clase/entities/clase.entity'; // Importa ClaseEntity
 
 @Injectable()
 export class ComentarioService {
