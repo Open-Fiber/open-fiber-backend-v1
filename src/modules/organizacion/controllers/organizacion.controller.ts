@@ -1,9 +1,9 @@
 import { Body, Controller, Get, Param, Patch, Post } from '@nestjs/common';
-import { OrganizacionService } from '../services/organizacion.service';
-import { CreateOrganizacionDto } from '../dto/createOrganizacion.dto';
-import { UpdateOrganizacionDto } from '../dto/updateOrganizacion.dto';
-import { OrganizacionDto } from '../dto/organizacion.dto';
 import { ApiTags, ApiResponse, ApiOperation } from '@nestjs/swagger';
+import { OrganizacionService } from './../services/organizacion.service';
+import { CreateOrganizacionDto } from './../dto/createOrganizacion.dto';
+import { UpdateOrganizacionDto } from './../dto/updateOrganizacion.dto';
+import { OrganizacionDto } from './../dto/organizacion.dto';
 
 @ApiTags('Organizacion')
 @Controller('organizacion')

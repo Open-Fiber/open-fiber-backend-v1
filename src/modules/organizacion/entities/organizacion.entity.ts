@@ -1,7 +1,7 @@
 import { Column, Entity, JoinColumn, OneToMany, OneToOne } from "typeorm";
-import { BaseEntity } from "../../../common/entities/base.entity";
-import { CuentaEntity } from "src/modules/cuenta/entities/cuenta.entity";
-import { MiembroEntity } from "src/modules/miembro/entities/miembro.entity";
+import { BaseEntity } from "./../../../common/entities/base.entity";
+import { CuentaEntity } from "./../../../modules/cuenta/entities/cuenta.entity";
+import { MiembroEntity } from "./../../../modules/miembro/entities/miembro.entity";
 
 @Entity({ name: 'organizacion' })
 export class OrganizacionEntity extends BaseEntity {

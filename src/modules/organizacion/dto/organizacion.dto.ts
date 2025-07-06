@@ -1,5 +1,4 @@
-import { CuentaDTO } from "../../../modules/cuenta/dto/cuenta.dto";
-import { OrganizacionEntity } from "../entities/organizacion.entity";
+import { OrganizacionEntity } from "./../entities/organizacion.entity";
 
 export class OrganizacionDto {
     id: string;
