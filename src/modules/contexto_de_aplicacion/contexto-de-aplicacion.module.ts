@@ -2,10 +2,10 @@
 import { forwardRef, Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ContextoDeAplicacionEntity } from './entities/contexto-de-aplicacion.entity';
-import { MaquinaEntity } from '../maquina/entities/maquina.entity';
+import { MaquinaEntity } from './../maquina/entities/maquina.entity';
 import { ContextoDeAplicacionService } from './services/contexto-de-aplicacion.service';
 import { ContextoDeAplicacionController } from './controllers/contexto-de-aplicacion.controller';
-import { CuentaModule } from '../cuenta/cuenta.module'; // Asumiendo que CuentaModule es una dependencia común
+import { CuentaModule } from './../cuenta/cuenta.module'; // Asumiendo que CuentaModule es una dependencia común
 
 @Module({
     imports: [

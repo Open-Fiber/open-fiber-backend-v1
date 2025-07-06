@@ -1,6 +1,6 @@
 // src/modules/contexto-de-aplicacion/dto/response-contexto-de-aplicacion.dto.ts
 import { ApiProperty } from '@nestjs/swagger';
-import { ContextoDeAplicacionEntity } from '../entities/contexto-de-aplicacion.entity';
+import { ContextoDeAplicacionEntity } from './../entities/contexto-de-aplicacion.entity';
 
 export class ResponseContextoDeAplicacionDto {
   @ApiProperty()

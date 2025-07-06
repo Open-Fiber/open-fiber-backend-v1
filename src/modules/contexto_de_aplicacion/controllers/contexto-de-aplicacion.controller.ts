@@ -3,11 +3,11 @@ import {
   Controller, Post, Body, Get, Param, Put, Delete, UseGuards
 } from '@nestjs/common';
 import { ApiBearerAuth, ApiTags, ApiOperation, ApiResponse } from '@nestjs/swagger';
-import { ContextoDeAplicacionService } from '../services/contexto-de-aplicacion.service';
-import { CreateContextoDeAplicacionDto } from '../dto/create-contexto-de-aplicacion.dto';
-import { UpdateContextoDeAplicacionDto } from '../dto/update-contexto-de-aplicacion.dto';
-import { ResponseContextoDeAplicacionDto } from '../dto/response-contexto-de-aplicacion.dto';
-import { AuthGuard, PermisoGuard } from 'src/auth/guards';
+import { ContextoDeAplicacionService } from './../services/contexto-de-aplicacion.service';
+import { CreateContextoDeAplicacionDto } from './../dto/create-contexto-de-aplicacion.dto';
+import { UpdateContextoDeAplicacionDto } from './../dto/update-contexto-de-aplicacion.dto';
+import { ResponseContextoDeAplicacionDto } from './../dto/response-contexto-de-aplicacion.dto';
+import { AuthGuard, PermisoGuard } from './../../../auth/guards';
 
 @ApiBearerAuth()
 @ApiTags('Contextos de Aplicación')

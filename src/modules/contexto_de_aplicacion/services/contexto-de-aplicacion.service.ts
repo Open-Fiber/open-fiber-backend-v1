@@ -2,10 +2,10 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { ContextoDeAplicacionEntity } from '../entities/contexto-de-aplicacion.entity';
-import { CreateContextoDeAplicacionDto } from '../dto/create-contexto-de-aplicacion.dto';
-import { UpdateContextoDeAplicacionDto } from '../dto/update-contexto-de-aplicacion.dto';
-import { MaquinaEntity } from 'src/modules/maquina/entities/maquina.entity';
+import { ContextoDeAplicacionEntity } from './../entities/contexto-de-aplicacion.entity';
+import { CreateContextoDeAplicacionDto } from './../dto/create-contexto-de-aplicacion.dto';
+import { UpdateContextoDeAplicacionDto } from './../dto/update-contexto-de-aplicacion.dto';
+import { MaquinaEntity } from './../../../modules/maquina/entities/maquina.entity';
 
 @Injectable()
 export class ContextoDeAplicacionService {
