@@ -3,11 +3,11 @@ import {
   Controller, Post, Body, Get, Param, Put, Delete, UseGuards
 } from '@nestjs/common';
 import { ApiBearerAuth, ApiTags, ApiOperation, ApiResponse } from '@nestjs/swagger';
-import { MiembroService } from '../services/miembro.service';
-import { CreateMiembroDto } from '../dto/create-miembro.dto';
-import { UpdateMiembroDto } from '../dto/update-miembro.dto';
-import { ResponseMiembroDto } from '../dto/response-miembro.dto';
-import { AuthGuard, PermisoGuard } from 'src/auth/guards';
+import { MiembroService } from './../services/miembro.service';
+import { CreateMiembroDto } from './../dto/create-miembro.dto';
+import { UpdateMiembroDto } from './../dto/update-miembro.dto';
+import { ResponseMiembroDto } from './../dto/response-miembro.dto';
+import { AuthGuard, PermisoGuard } from './../../../auth/guards';
 
 @ApiBearerAuth()
 @ApiTags('Miembros de Organización')

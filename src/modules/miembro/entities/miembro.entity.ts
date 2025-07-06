@@ -1,8 +1,8 @@
 // src/modules/miembro/entities/miembro.entity.ts
 import { Entity, Column, ManyToOne, Unique } from 'typeorm';
-import { BaseEntity } from 'src/common/entities/base.entity';
-import { UsuarioEntity } from 'src/modules/usuario/entities/usuario.entity'; // Asumo que tienes UsuarioEntity
-import { OrganizacionEntity } from 'src/modules/organizacion/entities/organizacion.entity'; // Asumo que tienes OrganizacionEntity
+import { BaseEntity } from './../../../common/entities/base.entity';
+import { UsuarioEntity } from './../../../modules/usuario/entities/usuario.entity'; // Asumo que tienes UsuarioEntity
+import { OrganizacionEntity } from './../../../modules/organizacion/entities/organizacion.entity'; // Asumo que tienes OrganizacionEntity
 
 @Entity('miembros')
 @Unique(['usuario', 'organizacion']) // Asegura que un usuario solo pueda ser miembro de una organización una vez

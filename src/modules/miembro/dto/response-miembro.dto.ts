@@ -1,6 +1,6 @@
 // src/modules/miembro/dto/response-miembro.dto.ts
 import { ApiProperty } from '@nestjs/swagger';
-import { MiembroEntity } from '../entities/miembro.entity';
+import { MiembroEntity } from './../entities/miembro.entity';
 
 export class ResponseMiembroDto {
   @ApiProperty()

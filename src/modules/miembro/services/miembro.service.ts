@@ -2,11 +2,11 @@
 import { Injectable, NotFoundException, ConflictException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { MiembroEntity } from '../entities/miembro.entity';
-import { CreateMiembroDto } from '../dto/create-miembro.dto';
+import { MiembroEntity } from './../entities/miembro.entity';
+import { CreateMiembroDto } from './../dto/create-miembro.dto';
 import { UpdateMiembroDto } from './../dto/update-miembro.dto';
-import { UsuarioEntity } from 'src/modules/usuario/entities/usuario.entity'; // Importa UsuarioEntity
-import { OrganizacionEntity } from 'src/modules/organizacion/entities/organizacion.entity'; // Importa OrganizacionEntity
+import { UsuarioEntity } from './../../usuario/entities/usuario.entity'; // Importa UsuarioEntity
+import { OrganizacionEntity } from './../../organizacion/entities/organizacion.entity'; // Importa OrganizacionEntity
 
 @Injectable()
 export class MiembroService {
